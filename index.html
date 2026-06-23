@@ -195,7 +195,7 @@
                     </span>
                 </button>
                 <!-- Logout Button -->
-                <button onclick="logout()" class="w-full flex items-center gap-2 px-3 py-2 text-sm text-red-655 dark:text-red-400 hover:bg-red-55 border border-transparent rounded-lg transition-colors">
+                <button onclick="logout()" class="w-full flex items-center gap-2 px-3 py-2 text-sm text-red-600 dark:text-red-400 hover:bg-red-50 border border-transparent rounded-lg transition-colors">
                     <i data-lucide="log-out" class="w-4 h-4"></i>
                     <span>Keluar Sistem</span>
                 </button>
@@ -224,7 +224,7 @@
                 <!-- Notifications & Quick Action -->
                 <div class="flex items-center gap-3">
                     <!-- Indicator Cloud Status -->
-                    <div id="cloud-sync-status-indicator" class="hidden items-center gap-1 bg-emerald-50 dark:bg-emerald-955/40 text-emerald-600 px-3 py-1.5 rounded-xl border border-emerald-100 dark:border-emerald-900 text-xs font-semibold cursor-pointer" onclick="testAndSyncGAS()">
+                    <div id="cloud-sync-status-indicator" class="hidden items-center gap-1 bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 px-3 py-1.5 rounded-xl border border-emerald-100 dark:border-emerald-900 text-xs font-semibold cursor-pointer" onclick="testAndSyncGAS()">
                         <i data-lucide="cloud-lightning" class="w-4 h-4 animate-pulse"></i>
                         <span class="hidden sm:inline">Sinkronisasi Awan</span>
                     </div>
@@ -247,7 +247,7 @@
                         </div>
                     </div>
                     <div class="md:hidden flex items-center">
-                        <button onclick="logout()" class="p-2 text-red-655 hover:bg-red-55/30 rounded-full">
+                        <button onclick="logout()" class="p-2 text-red-600 hover:bg-red-50/30 rounded-full">
                             <i data-lucide="log-out" class="w-5 h-5"></i>
                         </button>
                     </div>
@@ -455,7 +455,7 @@
                         <div class="overflow-x-auto">
                             <table class="w-full text-left border-collapse">
                                 <thead>
-                                    <tr class="bg-slate-55 dark:bg-slate-900 text-slate-400 text-[10px] uppercase font-bold border-b border-slate-100 dark:border-slate-700">
+                                    <tr class="bg-slate-50 dark:bg-slate-900 text-slate-400 text-[10px] uppercase font-bold border-b border-slate-100 dark:border-slate-700">
                                         <th class="p-4">Guru / Admin</th>
                                         <th class="p-4">Role</th>
                                         <th class="p-4">Username & Hak Akses</th>
@@ -735,8 +735,8 @@
                                 <p class="text-xs text-slate-400 mt-1">Laporan harian mengajar guru lengkap dengan CP/TP, kehadiran, tindak lanjut, dan refleksi.</p>
                             </div>
                             <div class="flex gap-2">
-                                <button onclick="exportLaporan('jurnal', 'pdf')" class="flex-1 bg-red-655 hover:bg-red-700 text-white py-2 px-3 rounded-xl text-xs font-semibold transition-colors flex items-center justify-center gap-1">
-                                    <i data-lucide="file-type-2" class="w-4 h-4"></i> PDF
+                                <button onclick="exportLaporan('jurnal', 'pdf')" class="flex-1 bg-red-600 hover:bg-red-700 text-white py-2 px-3 rounded-xl text-xs font-semibold transition-colors flex items-center justify-center gap-1">
+                                    <i data-lucide="file-text" class="w-4 h-4"></i> PDF
                                 </button>
                                 <button onclick="exportLaporan('jurnal', 'excel')" class="flex-1 bg-success-600 hover:bg-success-700 text-white py-2 px-3 rounded-xl text-xs font-semibold transition-colors flex items-center justify-center gap-1">
                                     <i data-lucide="file-spreadsheet" class="w-4 h-4"></i> Excel
@@ -754,8 +754,8 @@
                                 <p class="text-xs text-slate-400 mt-1">Laporan jadwal kegiatan rapat, KBM, projek, dan agenda penting lain sekolah.</p>
                             </div>
                             <div class="flex gap-2">
-                                <button onclick="exportLaporan('agenda', 'pdf')" class="flex-1 bg-red-655 hover:bg-red-700 text-white py-2 px-3 rounded-xl text-xs font-semibold transition-colors flex items-center justify-center gap-1">
-                                    <i data-lucide="file-type-2" class="w-4 h-4"></i> PDF
+                                <button onclick="exportLaporan('agenda', 'pdf')" class="flex-1 bg-red-600 hover:bg-red-700 text-white py-2 px-3 rounded-xl text-xs font-semibold transition-colors flex items-center justify-center gap-1">
+                                    <i data-lucide="file-text" class="w-4 h-4"></i> PDF
                                 </button>
                                 <button onclick="exportLaporan('agenda', 'excel')" class="flex-1 bg-success-600 hover:bg-success-700 text-white py-2 px-3 rounded-xl text-xs font-semibold transition-colors flex items-center justify-center gap-1">
                                     <i data-lucide="file-spreadsheet" class="w-4 h-4"></i> Excel
@@ -766,15 +766,15 @@
                         <!-- Class Notes Report -->
                         <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm flex flex-col justify-between space-y-4">
                             <div>
-                                <div class="w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-955/30 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mb-4">
+                                <div class="w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-950/30 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mb-4">
                                     <i data-lucide="notebook" class="w-6 h-6"></i>
                                 </div>
                                 <h4 class="font-bold text-base">Rekap Catatan Wali Kelas</h4>
                                 <p class="text-xs text-slate-400 mt-1">Pencatatan perkembangan akademik, perilaku, kesehatan, dan komunikasi orang tua siswa.</p>
                             </div>
                             <div class="flex gap-2">
-                                <button onclick="exportLaporan('catatan', 'pdf')" class="flex-1 bg-red-655 hover:bg-red-700 text-white py-2 px-3 rounded-xl text-xs font-semibold transition-colors flex items-center justify-center gap-1">
-                                    <i data-lucide="file-type-2" class="w-4 h-4"></i> PDF
+                                <button onclick="exportLaporan('catatan', 'pdf')" class="flex-1 bg-red-600 hover:bg-red-700 text-white py-2 px-3 rounded-xl text-xs font-semibold transition-colors flex items-center justify-center gap-1">
+                                    <i data-lucide="file-text" class="w-4 h-4"></i> PDF
                                 </button>
                                 <button onclick="exportLaporan('catatan', 'excel')" class="flex-1 bg-success-600 hover:bg-success-700 text-white py-2 px-3 rounded-xl text-xs font-semibold transition-colors flex items-center justify-center gap-1">
                                     <i data-lucide="file-spreadsheet" class="w-4 h-4"></i> Excel
@@ -1151,13 +1151,17 @@
                 </div>
                 <div class="grid grid-cols-2 gap-3">
                     <div>
-                        <label class="block text-xs font-semibold mb-1">Tanggal</label>
+                        <label class="block text-xs font-semibold mb-1">Tanggal Mulai</label>
                         <input type="date" id="agenda-tanggal" class="w-full px-3 py-2 rounded-xl text-xs border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900" required>
                     </div>
                     <div>
-                        <label class="block text-xs font-semibold mb-1">Waktu</label>
-                        <input type="time" id="agenda-waktu" class="w-full px-3 py-2 rounded-xl text-xs border border-slate-200 dark:border-slate-700 bg-slate-55 dark:bg-slate-900" required>
+                        <label class="block text-xs font-semibold mb-1">Tanggal Selesai (Opsional)</label>
+                        <input type="date" id="agenda-tanggal-akhir" class="w-full px-3 py-2 rounded-xl text-xs border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900">
                     </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold mb-1">Waktu</label>
+                    <input type="time" id="agenda-waktu" class="w-full px-3 py-2 rounded-xl text-xs border border-slate-200 dark:border-slate-700 bg-slate-55 dark:bg-slate-900" required>
                 </div>
                 <div>
                     <label class="block text-xs font-semibold mb-1">Lokasi</label>
@@ -1961,7 +1965,11 @@
             }
 
             agendaTampil.sort((a, b) => new Date(a.tanggal) - new Date(b.tanggal));
-            agendaTampil = agendaTampil.filter(a => a.tanggal >= todayStr && !a.selesai);
+            agendaTampil = agendaTampil.filter(a => {
+                const start = a.tanggal;
+                const end = a.tanggalAkhir || a.tanggal;
+                return end >= todayStr && !a.selesai;
+            });
 
             if (agendaTampil.length === 0) {
                 container.innerHTML = `
@@ -1980,7 +1988,7 @@
                 if (a.prioritas === "Tinggi") badgeColor = "bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-400";
                 if (a.prioritas === "Sedang") badgeColor = "bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-400";
 
-                const dFormat = formatDateIndo(a.tanggal);
+                const dFormat = a.tanggalAkhir ? `${formatDateIndo(a.tanggal)} s.d. ${formatDateIndo(a.tanggalAkhir)}` : formatDateIndo(a.tanggal);
 
                 html += `
                     <div class="p-3 bg-slate-50 dark:bg-slate-900/50 rounded-xl border border-slate-100 dark:border-slate-700/80 hover:border-primary-400 transition-colors">
@@ -2617,9 +2625,10 @@
                 if (a.prioritas === "Sedang") pBadge = "bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-400";
 
                 const isCompleted = a.selesai;
+                const dateRangeText = a.tanggalAkhir ? `${formatDateIndo(a.tanggal)} s.d. ${formatDateIndo(a.tanggalAkhir)}` : formatDateIndo(a.tanggal);
 
                 html += `
-                    <div class="p-4 bg-slate-55 dark:bg-slate-900/50 rounded-xl border ${isCompleted ? 'border-slate-200 opacity-60' : 'border-slate-100 hover:border-primary-400'} flex flex-col md:flex-row md:items-center justify-between gap-4 transition-all">
+                    <div class="p-4 bg-slate-50 dark:bg-slate-900/50 rounded-xl border ${isCompleted ? 'border-slate-200 opacity-60' : 'border-slate-100 hover:border-primary-400'} flex flex-col md:flex-row md:items-center justify-between gap-4 transition-all">
                         <div class="space-y-1.5">
                             <div class="flex flex-wrap items-center gap-2">
                                 <span class="text-[10px] uppercase font-extrabold px-2 py-0.5 rounded ${pBadge}">${a.prioritas}</span>
@@ -2628,7 +2637,7 @@
                             </div>
                             <h4 class="font-bold text-sm text-slate-800 dark:text-white ${isCompleted ? 'line-through' : ''}">${a.judul}</h4>
                             <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-400">
-                                <span class="flex items-center gap-1"><i data-lucide="calendar" class="w-3.5 h-3.5"></i> ${formatDateIndo(a.tanggal)}</span>
+                                <span class="flex items-center gap-1"><i data-lucide="calendar" class="w-3.5 h-3.5"></i> ${dateRangeText}</span>
                                 <span class="flex items-center gap-1"><i data-lucide="clock" class="w-3.5 h-3.5"></i> ${a.waktu} WIB</span>
                                 <span class="flex items-center gap-1"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i> ${a.lokasi}</span>
                             </div>
@@ -2655,6 +2664,7 @@
             form.reset();
 
             document.getElementById('agenda-tanggal').value = new Date().toISOString().split('T')[0];
+            document.getElementById('agenda-tanggal-akhir').value = "";
             document.getElementById('agenda-waktu').value = "07:30";
 
             if (id) {
@@ -2665,6 +2675,7 @@
                     document.getElementById('agenda-edit-id').value = a.id;
                     document.getElementById('agenda-judul').value = a.judul;
                     document.getElementById('agenda-tanggal').value = a.tanggal;
+                    document.getElementById('agenda-tanggal-akhir').value = a.tanggalAkhir || "";
                     document.getElementById('agenda-waktu').value = a.waktu;
                     document.getElementById('agenda-lokasi').value = a.lokasi;
                     document.getElementById('agenda-deskripsi').value = a.deskripsi;
@@ -2688,6 +2699,7 @@
             const id = document.getElementById('agenda-edit-id').value;
             const judul = document.getElementById('agenda-judul').value.trim();
             const tanggal = document.getElementById('agenda-tanggal').value;
+            const tanggalAkhir = document.getElementById('agenda-tanggal-akhir').value;
             const waktu = document.getElementById('agenda-waktu').value;
             const lokasi = document.getElementById('agenda-lokasi').value.trim();
             const deskripsi = document.getElementById('agenda-deskripsi').value.trim();
@@ -2700,16 +2712,21 @@
                 return;
             }
 
+            if (tanggalAkhir && tanggalAkhir < tanggal) {
+                showAlert('warning', 'Validasi Tanggal', 'Tanggal Selesai tidak boleh mendahului Tanggal Mulai!');
+                return;
+            }
+
             let agendas = dbGet('guru_agenda');
 
             if (id) {
-                agendas = agendas.map(a => a.id === id ? { ...a, judul, tanggal, waktu, lokasi, deskripsi, prioritas, kategori, selesai } : a);
+                agendas = agendas.map(a => a.id === id ? { ...a, judul, tanggal, tanggalAkhir, waktu, lokasi, deskripsi, prioritas, kategori, selesai } : a);
                 showAlert('success', 'Berhasil', 'Agenda kegiatan berhasil diperbarui.');
             } else {
                 const newAgenda = {
                     id: 'a-' + Date.now(),
                     userId: currentUser.id,
-                    judul, tanggal, waktu, lokasi, deskripsi, prioritas, kategori, selesai
+                    judul, tanggal, tanggalAkhir, waktu, lokasi, deskripsi, prioritas, kategori, selesai
                 };
                 agendas.push(newAgenda);
                 showAlert('success', 'Agenda Ditambahkan', 'Agenda baru berhasil dijadwalkan!');
@@ -2772,7 +2789,12 @@
 
             for (let day = 1; day <= totalDays; day++) {
                 const dayStr = `${y}-${String(m + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
-                const hasAgenda = userAgendas.filter(a => a.tanggal === dayStr);
+                const hasAgenda = userAgendas.filter(a => {
+                    if (a.tanggalAkhir) {
+                        return dayStr >= a.tanggal && dayStr <= a.tanggalAkhir;
+                    }
+                    return a.tanggal === dayStr;
+                });
 
                 let dotColor = '';
                 if (hasAgenda.length > 0) {
@@ -2799,7 +2821,12 @@
             const agendas = dbGet('guru_agenda');
             const container = document.getElementById('agenda-items-container');
             
-            let filtered = agendas.filter(a => a.tanggal === dateStr);
+            let filtered = agendas.filter(a => {
+                if (a.tanggalAkhir) {
+                    return dateStr >= a.tanggal && dateStr <= a.tanggalAkhir;
+                }
+                return a.tanggal === dateStr;
+            });
             if (currentUser.role !== 'ADMIN') {
                 filtered = filtered.filter(a => a.userId === currentUser.id);
             }
@@ -3133,7 +3160,7 @@
                         </tr>
                         ${data.map(a => `
                             <tr>
-                                <td>${formatDateIndo(a.tanggal)}<br>${a.waktu}</td>
+                                <td>${a.tanggalAkhir ? `${formatDateIndo(a.tanggal)} s.d. ${formatDateIndo(a.tanggalAkhir)}` : formatDateIndo(a.tanggal)}<br>${a.waktu}</td>
                                 <td><b>${a.judul}</b></td>
                                 <td>${a.lokasi}</td>
                                 <td>${a.deskripsi}</td>
@@ -3367,7 +3394,13 @@
                 relevantAgendas = relevantAgendas.filter(a => a.userId === currentUser.id);
             }
 
-            const todayAgendas = relevantAgendas.filter(a => a.tanggal === todayStr && !a.selesai);
+            const todayAgendas = relevantAgendas.filter(a => {
+                if (a.selesai) return false;
+                if (a.tanggalAkhir) {
+                    return todayStr >= a.tanggal && todayStr <= a.tanggalAkhir;
+                }
+                return a.tanggal === todayStr;
+            });
             
             notifications = [];
             todayAgendas.forEach(a => {
