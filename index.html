@@ -93,14 +93,14 @@
         <div id="login-screen" class="fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-tr from-sky-600 via-primary-700 to-emerald-600 p-4">
             <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-2xl w-full max-w-md transition-transform duration-300 transform scale-100 relative overflow-hidden">
                 <div class="absolute -top-10 -right-10 w-32 h-32 bg-emerald-500/20 rounded-full blur-xl"></div>
-                <div class="absolute -bottom-10 -left-10 w-32 h-32 bg-sky-500/20 rounded-full blur-xl"></div>
+                <div class="absolute -bottom-10 -left-10 w-32 h-32 bg-sky-550/20 rounded-full blur-xl"></div>
                 
                 <div class="text-center mb-8 relative z-10">
                     <div class="mx-auto w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-lg mb-4 p-2">
                         <img src="https://i.ibb.co.com/yFyFt7k4/logo-sdn-1-dupaaa.png" alt="Logo Sekolah" class="w-full h-full object-contain">
                     </div>
                     <h2 class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">Sistem Administrasi Guru</h2>
-                    <p class="text-sm text-slate-505 dark:text-slate-400 mt-1">SDN 1 Durian Payung</p>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">SDN 1 Durian Payung</p>
                 </div>
 
                 <div id="login-error-msg" class="hidden bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-xl mb-4 text-sm flex items-center gap-2">
@@ -115,7 +115,7 @@
                             <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400">
                                 <i data-lucide="user" class="w-5 h-5"></i>
                             </span>
-                            <input type="text" id="login-username" class="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-primary-500 text-slate-900 dark:text-white" placeholder="Masukkan username" required>
+                            <input type="text" id="login-username" class="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-55 dark:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-primary-500 text-slate-900 dark:text-white" placeholder="Masukkan username" required>
                         </div>
                     </div>
                     <div>
@@ -124,7 +124,7 @@
                             <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400">
                                 <i data-lucide="lock" class="w-5 h-5"></i>
                             </span>
-                            <input type="password" id="login-password" class="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-primary-500 text-slate-900 dark:text-white" placeholder="Masukkan password" required>
+                            <input type="password" id="login-password" class="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-55 dark:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-primary-500 text-slate-900 dark:text-white" placeholder="Masukkan password" required>
                         </div>
                     </div>
                     <div>
@@ -224,7 +224,7 @@
                 <!-- Notifications & Quick Action -->
                 <div class="flex items-center gap-3">
                     <!-- Indicator Cloud Status -->
-                    <div id="cloud-sync-status-indicator" class="hidden items-center gap-1 bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 px-3 py-1.5 rounded-xl border border-emerald-100 dark:border-emerald-900 text-xs font-semibold cursor-pointer" onclick="testAndSyncGAS()">
+                    <div id="cloud-sync-status-indicator" class="hidden items-center gap-1 bg-emerald-50 dark:bg-emerald-955/40 text-emerald-600 px-3 py-1.5 rounded-xl border border-emerald-100 dark:border-emerald-900 text-xs font-semibold cursor-pointer" onclick="testAndSyncGAS()">
                         <i data-lucide="cloud-lightning" class="w-4 h-4 animate-pulse"></i>
                         <span class="hidden sm:inline">Sinkronisasi Awan</span>
                     </div>
@@ -247,7 +247,7 @@
                         </div>
                     </div>
                     <div class="md:hidden flex items-center">
-                        <button onclick="logout()" class="p-2 text-red-600 hover:bg-red-50/30 rounded-full">
+                        <button onclick="logout()" class="p-2 text-red-650 hover:bg-red-55/30 rounded-full">
                             <i data-lucide="log-out" class="w-5 h-5"></i>
                         </button>
                     </div>
@@ -312,7 +312,7 @@
                                 <i data-lucide="clipboard-list" class="w-6 h-6"></i>
                             </div>
                             <div>
-                                <p class="text-xs text-slate-400">Laporan Bulanan</p>
+                                <p class="text-xs text-slate-400">Laporan Luring</p>
                                 <h3 class="text-xl md:text-2xl font-bold mt-1" id="stat-total-laporan">0</h3>
                             </div>
                         </div>
@@ -501,7 +501,7 @@
                                     <span class="absolute inset-y-0 flex items-center pl-3 text-slate-400">
                                         <i data-lucide="search" class="w-4 h-4"></i>
                                     </span>
-                                    <input type="text" id="pelajaran-search" oninput="renderPelajaranTable()" class="w-full pl-9 pr-4 py-2 rounded-xl text-xs border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 focus:outline-none focus:ring-1 focus:ring-primary-500" placeholder="Cari CP/TP...">
+                                    <input type="text" id="pelajaran-search" oninput="renderPelajaranTable()" class="w-full pl-9 pr-4 py-2 rounded-xl text-xs border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 focus:outline-none focus:ring-1 focus:ring-primary-550" placeholder="Cari CP/TP...">
                                 </div>
                                 <div id="admin-pelajaran-filter-container">
                                     <select id="filter-pelajaran-kelas" onchange="renderPelajaranTable()" class="px-3 py-2 rounded-xl text-xs border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-slate-700 dark:text-slate-300">
@@ -630,7 +630,7 @@
                         <div class="lg:col-span-1 bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm space-y-4">
                             <h4 class="font-bold text-sm">Kalender Agenda</h4>
                             <div class="grid grid-cols-7 gap-1 text-center text-xs font-semibold border-b pb-2">
-                                <span class="text-red-500">M</span><span>S</span><span>S</span><span>R</span><span>K</span><span>J</span><span class="text-primary-500">S</span>
+                                <span class="text-red-505">M</span><span>S</span><span>S</span><span>R</span><span>K</span><span>J</span><span class="text-primary-500">S</span>
                             </div>
                             <div id="calendar-days-grid" class="grid grid-cols-7 gap-1 text-center text-xs text-slate-600 dark:text-slate-400">
                                 <!-- Calendar Generated Days -->
@@ -766,7 +766,7 @@
                         <!-- Class Notes Report -->
                         <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm flex flex-col justify-between space-y-4">
                             <div>
-                                <div class="w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-950/30 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mb-4">
+                                <div class="w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-955/30 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mb-4">
                                     <i data-lucide="notebook" class="w-6 h-6"></i>
                                 </div>
                                 <h4 class="font-bold text-base">Rekap Catatan Wali Kelas</h4>
@@ -972,7 +972,7 @@
                     </div>
                     <div>
                         <label class="block text-xs font-semibold mb-1">Password</label>
-                        <input type="text" id="guru-password" class="w-full px-3 py-2 rounded-xl text-xs border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900" required>
+                        <input type="text" id="guru-password" class="w-full px-3 py-2 rounded-xl text-xs border border-slate-200 dark:border-slate-700 bg-slate-55 dark:bg-slate-900" required>
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-3">
@@ -1037,7 +1037,7 @@
                     </div>
                     <div>
                         <label class="block text-xs font-semibold mb-1">Fase</label>
-                        <select id="pel-fase" class="w-full px-3 py-2 rounded-xl text-xs border border-slate-200 dark:border-slate-700 bg-slate-55 dark:bg-slate-900 text-slate-800 dark:text-white">
+                        <select id="pel-fase" class="w-full px-3 py-2 rounded-xl text-xs border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-white">
                             <option value="Fase A">Fase A</option>
                             <option value="Fase B">Fase B</option>
                             <option value="Fase C">Fase C</option>
@@ -1092,7 +1092,7 @@
                     </div>
                     <div>
                         <label class="block text-xs font-semibold mb-1">Tujuan Pembelajaran (TP)</label>
-                        <select id="jurnal-tp" class="w-full px-3 py-2 rounded-xl text-xs border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white" required>
+                        <select id="jurnal-tp" class="w-full px-3 py-2 rounded-xl text-xs border border-slate-200 dark:border-slate-700 bg-slate-55 dark:bg-slate-900 text-slate-900 dark:text-white" required>
                             <option value="">Pilih Tujuan Pembelajaran</option>
                         </select>
                     </div>
@@ -1291,6 +1291,70 @@
         let currentTab = 'dashboard';
         let chartInstance = null;
 
+        // Fungsi pembantu untuk membersihkan format Tanggal dari Google Sheets atau LocalStorage
+        function cleanDateFormat(dateStr) {
+            if (!dateStr || dateStr === 'null' || dateStr === 'undefined' || dateStr === 'NaN-NaN-NaN') return "";
+            dateStr = String(dateStr).trim();
+            
+            // Jika format ISO datetime, parsing menggunakan waktu lokal asli browser agar tanggal tidak mundur
+            const dateObj = new Date(dateStr);
+            if (!isNaN(dateObj.getTime())) {
+                // Jika sudah berformat murni YYYY-MM-DD tanpa komponen waktu, kembalikan langsung
+                if (/^\d{4}-\d{2}-\d{2}$/.test(dateStr)) {
+                    return dateStr;
+                }
+                const offset = dateObj.getTimezoneOffset();
+                let adjustedDate = dateObj;
+                if (offset === 0) {
+                    // Jika browser berjalan di UTC (biasa di iframe sandbox), sesuaikan ke WIB (+7 jam)
+                    adjustedDate = new Date(dateObj.getTime() + 7 * 60 * 60 * 1000);
+                }
+                const y = adjustedDate.getFullYear();
+                const m = String(adjustedDate.getMonth() + 1).padStart(2, '0');
+                const d = String(adjustedDate.getDate()).padStart(2, '0');
+                return `${y}-${m}-${d}`;
+            }
+            return dateStr;
+        }
+
+        // Fungsi pembantu untuk mengekstrak jam (HH:mm) dari objek tanggal bawaan Google Sheets
+        function cleanTimeFormat(timeStr) {
+            if (!timeStr || timeStr === 'null' || timeStr === 'undefined') return "07:30";
+            timeStr = String(timeStr).trim();
+            
+            // Jika waktu terdistorsi oleh epoch Google Sheets (misal: "1899-12-30T01:17:56.000Z")
+            if (timeStr.includes('T')) {
+                try {
+                    const date = new Date(timeStr);
+                    if (!isNaN(date.getTime())) {
+                        const offset = date.getTimezoneOffset();
+                        if (offset === 0) {
+                            // Kompensasi pergeseran Batavia Time 1899 (+07:27:56) jika berjalan di UTC murni
+                            const adjustedDate = new Date(date.getTime() + 26876000);
+                            const hours = String(adjustedDate.getUTCHours()).padStart(2, '0');
+                            const minutes = String(adjustedDate.getUTCMinutes()).padStart(2, '0');
+                            return `${hours}:${minutes}`;
+                        } else {
+                            // Gunakan local time browser (otomatis menggunakan offset historis dari database browser)
+                            const hours = String(date.getHours()).padStart(2, '0');
+                            const minutes = String(date.getMinutes()).padStart(2, '0');
+                            return `${hours}:${minutes}`;
+                        }
+                    }
+                } catch (e) {}
+            }
+            
+            // Jika formatnya HH:mm:ss atau HH:mm, ambil bagian HH:mm saja
+            const matchTime = timeStr.match(/(\d{1,2})[.:](\d{2})/);
+            if (matchTime) {
+                const h = String(matchTime[1]).padStart(2, '0');
+                const m = String(matchTime[2]).padStart(2, '0');
+                return `${h}:${m}`;
+            }
+            
+            return "07:30";
+        }
+
         // Default Data Sekolah
         const defaultSchoolProfile = {
             name: "SDN 1 Durian Payung",
@@ -1339,8 +1403,35 @@
             }
         }
 
-        // Helper Get Data
-        function dbGet(key) { return JSON.parse(localStorage.getItem(key)); }
+        // Helper Get Data dengan auto-sanitasi format tanggal dan jam
+        function dbGet(key) { 
+            const data = JSON.parse(localStorage.getItem(key));
+            if (!data) return data;
+            
+            // Sanitasi real-time saat data dibaca oleh aplikasi
+            if (key === 'guru_agenda' && Array.isArray(data)) {
+                return data.map(a => ({
+                    ...a,
+                    tanggal: cleanDateFormat(a.tanggal),
+                    tanggalAkhir: cleanDateFormat(a.tanggalAkhir || a.tanggalakhir || a['tanggal akhir'] || a['Tanggal Akhir'] || a.tanggal_akhir || ""),
+                    waktu: cleanTimeFormat(a.waktu)
+                }));
+            }
+            if (key === 'guru_jurnal' && Array.isArray(data)) {
+                return data.map(j => ({
+                    ...j,
+                    tanggal: cleanDateFormat(j.tanggal)
+                }));
+            }
+            if (key === 'guru_catatan' && Array.isArray(data)) {
+                return data.map(c => ({
+                    ...c,
+                    tanggal: cleanDateFormat(c.tanggal)
+                }));
+            }
+            return data; 
+        }
+
         // Helper Save Data
         function dbSet(key, value) { 
             localStorage.setItem(key, JSON.stringify(value));
@@ -1360,6 +1451,7 @@
             updateGasStatusUI();
         }
 
+        // Menampilkan status integrasi Google Apps Script
         function updateGasStatusUI() {
             const url = getGasUrl();
             const statusPill = document.getElementById('gas-status-pill');
@@ -1518,9 +1610,38 @@
                         }
                     }
                     if (downloadedData.pelajaran) localStorage.setItem('guru_pelajaran', JSON.stringify(downloadedData.pelajaran));
-                    if (downloadedData.jurnal) localStorage.setItem('guru_jurnal', JSON.stringify(downloadedData.jurnal));
-                    if (downloadedData.agenda) localStorage.setItem('guru_agenda', JSON.stringify(downloadedData.agenda));
-                    if (downloadedData.catatan) localStorage.setItem('guru_catatan', JSON.stringify(downloadedData.catatan));
+                    
+                    // Bersihkan data Jurnal Harian dari cloud
+                    if (downloadedData.jurnal) {
+                        const sanitizedJurnal = downloadedData.jurnal.map(j => ({
+                            ...j,
+                            tanggal: cleanDateFormat(j.tanggal)
+                        }));
+                        localStorage.setItem('guru_jurnal', JSON.stringify(sanitizedJurnal));
+                    }
+                    
+                    // Bersihkan data Agenda dari cloud agar rentang tanggal & waktu tidak terdistorsi
+                    if (downloadedData.agenda) {
+                        const sanitizedAgenda = downloadedData.agenda.map(a => {
+                            const tAkhir = a.tanggalAkhir || a.tanggalakhir || a['tanggal akhir'] || a['Tanggal Akhir'] || a.tanggal_akhir || "";
+                            return {
+                                ...a,
+                                tanggal: cleanDateFormat(a.tanggal || a.Tanggal || ""),
+                                tanggalAkhir: cleanDateFormat(tAkhir),
+                                waktu: cleanTimeFormat(a.waktu || a.Waktu || "")
+                            };
+                        });
+                        localStorage.setItem('guru_agenda', JSON.stringify(sanitizedAgenda));
+                    }
+                    
+                    // Bersihkan data Catatan Siswa dari cloud
+                    if (downloadedData.catatan) {
+                        const sanitizedCatatan = downloadedData.catatan.map(c => ({
+                            ...c,
+                            tanggal: cleanDateFormat(c.tanggal)
+                        }));
+                        localStorage.setItem('guru_catatan', JSON.stringify(sanitizedCatatan));
+                    }
 
                     if (!isSilent) {
                         showAlert('success', 'Sinkronisasi Berhasil', 'Data terbaru berhasil diunduh dari Google Sheets & disinkronkan ke dalam perangkat ini!');
@@ -1603,7 +1724,7 @@
 
             if (onConfirm) {
                 actionsBox.innerHTML = `
-                    <button id="alert-btn-cancel" class="px-4 py-2 border border-slate-200 dark:border-slate-700 rounded-xl text-xs font-semibold hover:bg-slate-50 dark:hover:bg-slate-900">Batal</button>
+                    <button id="alert-btn-cancel" class="px-4 py-2 border border-slate-200 dark:border-slate-700 rounded-xl text-xs font-semibold hover:bg-slate-55 dark:hover:bg-slate-900">Batal</button>
                     <button id="alert-btn-confirm" class="px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-xl text-xs font-semibold">Lanjutkan</button>
                 `;
                 document.getElementById('alert-btn-cancel').onclick = () => container.classList.add('hidden');
@@ -1683,7 +1804,7 @@
             lucide.createIcons();
         }
 
-        // Set up custom views based on access level
+        // Menampilkan antarmuka navigasi sesuai peran pengguna
         function setupUIForUser() {
             if (!currentUser) return;
             const sidebarNav = document.getElementById('sidebar-menu');
@@ -1721,7 +1842,7 @@
             menuItems.forEach(item => {
                 if (item.roles.includes(currentUser.role)) {
                     sidebarHTML += `
-                        <button onclick="switchTab('${item.id}')" data-tab="${item.id}" class="nav-menu-item flex items-center gap-3 w-full px-4 py-2.5 text-sm font-semibold rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+                        <button onclick="switchTab('${item.id}')" data-tab="${item.id}" class="nav-menu-item flex items-center gap-3 w-full px-4 py-2.5 text-sm font-semibold rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-105 dark:hover:bg-slate-700 transition-colors">
                             <i data-lucide="${item.icon}" class="w-5 h-5"></i>
                             <span>${item.name}</span>
                         </button>
@@ -1747,7 +1868,7 @@
             let mobileHTML = '';
             mobileItems.forEach(item => {
                 mobileHTML += `
-                    <button onclick="switchTab('${item.id}')" data-tab="${item.id}" class="mobile-menu-item flex flex-col items-center justify-center flex-1 py-1 text-slate-555 hover:text-primary-600 transition-colors">
+                    <button onclick="switchTab('${item.id}')" data-tab="${item.id}" class="mobile-menu-item flex flex-col items-center justify-center flex-1 py-1 text-slate-500 hover:text-primary-600 transition-colors">
                         <i data-lucide="${item.icon}" class="w-5 h-5"></i>
                         <span class="text-[10px] mt-1 font-medium">${item.name}</span>
                     </button>
@@ -1760,7 +1881,7 @@
                 if (item.roles.includes(currentUser.role)) {
                     fullMobileMenuHTML += `
                         <button onclick="switchTab('${item.id}'); closeMobileFullMenuModal();" class="flex items-center gap-3 w-full px-4 py-3 text-sm font-semibold rounded-xl text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700">
-                            <i data-lucide="${item.icon}" class="w-5 h-5 text-slate-550"></i>
+                            <i data-lucide="${item.icon}" class="w-5 h-5 text-slate-500"></i>
                             <span>${item.name}</span>
                         </button>
                     `;
@@ -1811,10 +1932,10 @@
         // --- 6. DASHBOARD STATISTICS & GRAPHIC ---
         function updateDashboardStats() {
             if (!currentUser) return;
-            const jurnals = dbGet('guru_jurnal');
-            const agendas = dbGet('guru_agenda');
-            const users = dbGet('guru_users');
-            const catatans = dbGet('guru_catatan');
+            const jurnals = dbGet('guru_jurnal') || [];
+            const agendas = dbGet('guru_agenda') || [];
+            const users = dbGet('guru_users') || [];
+            const catatans = dbGet('guru_catatan') || [];
 
             if (currentUser.role === 'ADMIN') {
                 document.getElementById('admin-stats-row').classList.remove('hidden');
@@ -1847,7 +1968,11 @@
                 document.getElementById('guru-stat-agenda-bulan').innerText = agendaBulanIni;
 
                 const todayStr = new Date().toISOString().split('T')[0];
-                const agendaHariIni = listAgendaGuru.filter(a => a.tanggal === todayStr && !a.selesai);
+                const agendaHariIni = listAgendaGuru.filter(a => {
+                    const start = a.tanggal;
+                    const end = a.tanggalAkhir || a.tanggal;
+                    return todayStr >= start && todayStr <= end && !a.selesai;
+                });
                 if (agendaHariIni.length > 0) {
                     document.getElementById('guru-stat-today-status').innerText = `Ada ${agendaHariIni.length} Agenda penting belum diselesaikan hari ini!`;
                 } else {
@@ -1866,8 +1991,8 @@
                 chartInstance.destroy();
             }
 
-            const jurnals = dbGet('guru_jurnal');
-            const agendas = dbGet('guru_agenda');
+            const jurnals = dbGet('guru_jurnal') || [];
+            const agendas = dbGet('guru_agenda') || [];
 
             let months = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agt', 'Sep', 'Okt', 'Nov', 'Des'];
             let dataJurnalCounts = new Array(12).fill(0);
@@ -1955,7 +2080,7 @@
 
         function renderDashboardAgenda() {
             if (!currentUser) return;
-            const agendas = dbGet('guru_agenda');
+            const agendas = dbGet('guru_agenda') || [];
             const todayStr = new Date().toISOString().split('T')[0];
             const container = document.getElementById('dashboard-agenda-list');
 
@@ -2007,7 +2132,7 @@
 
         // --- 7. MANAJEMEN GURU (ADMIN ONLY) ---
         function renderGuruTable() {
-            const users = dbGet('guru_users');
+            const users = dbGet('guru_users') || [];
             const search = document.getElementById('guru-search').value.toLowerCase();
             const body = document.getElementById('guru-table-body');
             
@@ -2047,11 +2172,11 @@
                             ${roleBadge}
                         </td>
                         <td class="p-4">
-                            <p class="font-semibold text-xs text-slate-800 dark:text-slate-200">User: ${u.username}</p>
+                            <p class="font-semibold text-xs text-slate-800 dark:text-slate-205">User: ${u.username}</p>
                             <p class="text-[10px] text-slate-400">Sandi: ${u.password}</p>
                         </td>
                         <td class="p-4 font-semibold text-xs">${u.kelas}</td>
-                        <td class="p-4 text-xs text-slate-505">${u.jabatan}</td>
+                        <td class="p-4 text-xs text-slate-500">${u.jabatan}</td>
                         <td class="p-4">
                             <button onclick="toggleGuruStatus('${u.id}')" ${isSelf ? 'disabled title="Tidak bisa menonaktifkan akun sendiri"' : ''} class="px-2 py-1 rounded text-[10px] font-bold ${isSelf ? 'opacity-60 cursor-not-allowed' : ''} ${isAktif ? 'bg-success-100 text-success-800 dark:bg-success-950 dark:text-success-300' : 'bg-red-100 text-red-800 dark:bg-red-955/30'}">
                                 ${isAktif ? 'AKTIF' : 'NONAKTIF'}
@@ -2060,7 +2185,7 @@
                         <td class="p-4 text-right">
                             <div class="flex items-center justify-end gap-1.5">
                                 <button onclick="openGuruModal('${u.id}')" class="p-1.5 bg-blue-50 text-blue-600 hover:bg-blue-100 dark:bg-blue-955/20 dark:text-blue-400 rounded-lg"><i data-lucide="edit" class="w-4 h-4"></i></button>
-                                <button onclick="deleteGuruData('${u.id}')" ${isSelf ? 'disabled class="p-1.5 bg-gray-100 text-gray-400 dark:bg-gray-800 dark:text-gray-600 rounded-lg cursor-not-allowed" title="Tidak bisa menghapus akun sendiri"' : 'class="p-1.5 bg-red-50 text-red-650 hover:bg-red-100 dark:bg-red-955/20 dark:text-red-455 rounded-lg"'}><i data-lucide="trash" class="w-4 h-4"></i></button>
+                                <button onclick="deleteGuruData('${u.id}')" ${isSelf ? 'disabled class="p-1.5 bg-gray-100 text-gray-400 dark:bg-gray-800 dark:text-gray-600 rounded-lg cursor-not-allowed" title="Tidak bisa menghapus akun sendiri"' : 'class="p-1.5 bg-red-50 text-red-650 hover:bg-red-105 dark:bg-red-955/20 dark:text-red-450 rounded-lg"'}><i data-lucide="trash" class="w-4 h-4"></i></button>
                             </div>
                         </td>
                     </tr>
@@ -2078,7 +2203,7 @@
 
             if (id) {
                 title.innerText = "Edit Pengguna";
-                const users = dbGet('guru_users');
+                const users = dbGet('guru_users') || [];
                 const u = users.find(x => x.id === id);
                 if (u) {
                     document.getElementById('guru-edit-id').value = u.id;
@@ -2121,7 +2246,7 @@
                 return;
             }
 
-            let users = dbGet('guru_users');
+            let users = dbGet('guru_users') || [];
 
             if (id) {
                 users = users.map(u => u.id === id ? { ...u, name, nip, username, password, role, kelas, jabatan, status } : u);
@@ -2145,13 +2270,12 @@
             renderGuruTable();
         }
 
-        // status akun
         function toggleGuruStatus(id) {
             if (id === currentUser.id) {
                 showAlert('warning', 'Aksi Ditolak', 'Anda tidak dapat menonaktifkan akun Anda sendiri.');
                 return;
             }
-            let users = dbGet('guru_users');
+            let users = dbGet('guru_users') || [];
             users = users.map(u => {
                 if (u.id === id) {
                     u.status = u.status === 'AKTIF' ? 'NONAKTIF' : 'AKTIF';
@@ -2168,7 +2292,7 @@
                 return;
             }
             showAlert('danger', 'Konfirmasi Hapus', 'Apakah Anda yakin ingin menghapus data pengguna ini?', () => {
-                let users = dbGet('guru_users');
+                let users = dbGet('guru_users') || [];
                 users = users.filter(u => u.id !== id);
                 dbSet('guru_users', users);
                 renderGuruTable();
@@ -2179,7 +2303,7 @@
 
         // --- 8. MENU DATA PELAJARAN ---
         function renderPelajaranTable() {
-            const data = dbGet('guru_pelajaran');
+            const data = dbGet('guru_pelajaran') || [];
             const search = document.getElementById('pelajaran-search').value.toLowerCase();
             const filterKelas = document.getElementById('filter-pelajaran-kelas').value;
             const body = document.getElementById('pelajaran-table-body');
@@ -2226,7 +2350,7 @@
                         <td class="p-4 text-right align-top">
                             <div class="flex items-center justify-end gap-1.5">
                                 <button onclick="openPelajaranModal('${p.id}')" class="p-1.5 bg-blue-50 text-blue-600 hover:bg-blue-100 rounded-lg"><i data-lucide="edit" class="w-4 h-4"></i></button>
-                                <button onclick="deletePelajaranData('${p.id}')" class="p-1.5 bg-red-50 text-red-655 hover:bg-red-105 dark:bg-red-955/20 dark:text-red-450 rounded-lg"><i data-lucide="trash" class="w-4 h-4"></i></button>
+                                <button onclick="deletePelajaranData('${p.id}')" class="p-1.5 bg-red-650 hover:bg-red-105 dark:bg-red-955/20 dark:text-red-455 rounded-lg"><i data-lucide="trash" class="w-4 h-4"></i></button>
                             </div>
                         </td>
                     </tr>
@@ -2244,7 +2368,7 @@
 
             if (id) {
                 title.innerText = "Edit Mata Pelajaran (CP/TP)";
-                const data = dbGet('guru_pelajaran');
+                const data = dbGet('guru_pelajaran') || [];
                 const p = data.find(x => x.id === id);
                 if (p) {
                     document.getElementById('pelajaran-edit-id').value = p.id;
@@ -2302,7 +2426,7 @@
             }
 
             const tp = tpString.split('\n').map(t => t.trim()).filter(t => t.length > 0);
-            let data = dbGet('guru_pelajaran');
+            let data = dbGet('guru_pelajaran') || [];
 
             if (id) {
                 data = data.map(p => p.id === id ? { ...p, mapel, kelas, fase, cp, tp } : p);
@@ -2323,7 +2447,7 @@
 
         function deletePelajaranData(id) {
             showAlert('danger', 'Konfirmasi Hapus', 'Apakah Anda yakin ingin menghapus kompetensi pelajaran ini?', () => {
-                let data = dbGet('guru_pelajaran');
+                let data = dbGet('guru_pelajaran') || [];
                 data = data.filter(x => x.id !== id);
                 dbSet('guru_pelajaran', data);
                 renderPelajaranTable();
@@ -2334,7 +2458,7 @@
 
         // --- 9. MENU JURNAL HARIAN GURU ---
         function populateJurnalFilterOptions() {
-            const users = dbGet('guru_users');
+            const users = dbGet('guru_users') || [];
             const select = document.getElementById('filter-jurnal-guru');
             const container = document.getElementById('filter-jurnal-guru-container');
 
@@ -2351,7 +2475,7 @@
         }
 
         function renderJurnalTable() {
-            const jurnals = dbGet('guru_jurnal');
+            const jurnals = dbGet('guru_jurnal') || [];
             const search = document.getElementById('jurnal-search').value.toLowerCase();
             const filterDate = document.getElementById('filter-jurnal-date').value;
             const filterGuru = document.getElementById('filter-jurnal-guru') ? document.getElementById('filter-jurnal-guru').value : '';
@@ -2408,7 +2532,7 @@
                         </td>
                         <td class="p-4 align-top text-xs">
                             <p class="font-bold text-emerald-600">Hadir: ${j.hadir}</p>
-                            <p class="text-red-505 font-medium">Absen: ${j.absen}</p>
+                            <p class="text-red-500 font-medium">Absen: ${j.absen}</p>
                         </td>
                         <td class="p-4 align-top max-w-xs text-xs">
                             <p class="font-semibold text-amber-600">Kendala: <span class="text-slate-505 font-normal">${j.kendala || '-'}</span></p>
@@ -2419,7 +2543,7 @@
                                 <button onclick="printSingleJurnalPDF('${j.id}')" class="p-1.5 bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 rounded-lg text-slate-600 dark:text-slate-300" title="Cetak Jurnal"><i data-lucide="printer" class="w-4 h-4"></i></button>
                                 ${isMyJurnal ? `
                                     <button onclick="openJurnalModal('${j.id}')" class="p-1.5 bg-blue-50 text-blue-600 hover:bg-blue-100 rounded-lg"><i data-lucide="edit" class="w-4 h-4"></i></button>
-                                    <button onclick="deleteJurnalData('${j.id}')" class="p-1.5 bg-red-50 text-red-650 hover:bg-red-105 rounded-lg"><i data-lucide="trash" class="w-4 h-4"></i></button>
+                                    <button onclick="deleteJurnalData('${j.id}')" class="p-1.5 bg-red-50 text-red-650 hover:bg-red-105 dark:bg-red-955/25 dark:text-red-455 rounded-lg"><i data-lucide="trash" class="w-4 h-4"></i></button>
                                 ` : ''}
                             </div>
                         </td>
@@ -2436,7 +2560,7 @@
             const form = document.getElementById('jurnal-form');
             form.reset();
 
-            const pelajaran = dbGet('guru_pelajaran');
+            const pelajaran = dbGet('guru_pelajaran') || [];
             const pelajaranSelect = document.getElementById('jurnal-pelajaran-select');
             
             let filteredPelajaran = pelajaran;
@@ -2446,7 +2570,7 @@
 
             let mapelOptions = '<option value="">Pilih Mata Pelajaran</option>';
             filteredPelajaran.forEach(p => {
-                mapelOptions += `<option value="${p.id}">${p.mapel}</option>`;
+                mapelOptions += `<option value="${p.id}">${p.mapel}</option>';`;
             });
             pelajaranSelect.innerHTML = mapelOptions;
 
@@ -2455,7 +2579,7 @@
 
             if (id) {
                 title.innerText = "Edit Catatan Jurnal Pembelajaran";
-                const jurnals = dbGet('guru_jurnal');
+                const jurnals = dbGet('guru_jurnal') || [];
                 const j = jurnals.find(x => x.id === id);
                 if (j) {
                     document.getElementById('jurnal-edit-id').value = j.id;
@@ -2511,7 +2635,7 @@
                 return;
             }
 
-            const pelajaran = dbGet('guru_pelajaran');
+            const pelajaran = dbGet('guru_pelajaran') || [];
             const p = pelajaran.find(x => x.id === mapelId);
             if (p) {
                 cpBox.value = p.cp;
@@ -2544,11 +2668,11 @@
                 return;
             }
 
-            const pelajaran = dbGet('guru_pelajaran');
+            const pelajaran = dbGet('guru_pelajaran') || [];
             const selectedPel = pelajaran.find(x => x.id === mapelId);
             const mapel = selectedPel ? selectedPel.mapel : '';
 
-            let jurnals = dbGet('guru_jurnal');
+            let jurnals = dbGet('guru_jurnal') || [];
 
             if (id) {
                 jurnals = jurnals.map(j => j.id === id ? { ...j, tanggal, hari, mapel, materi, cp, tp, kegiatan, hadir, absen, kendala, tindaklanjut, refleksi, catatanSiswa } : j);
@@ -2574,7 +2698,7 @@
 
         function deleteJurnalData(id) {
             showAlert('danger', 'Hapus Jurnal', 'Apakah Anda yakin ingin menghapus arsip jurnal ini?', () => {
-                let jurnals = dbGet('guru_jurnal');
+                let jurnals = dbGet('guru_jurnal') || [];
                 jurnals = jurnals.filter(x => x.id !== id);
                 dbSet('guru_jurnal', jurnals);
                 renderJurnalTable();
@@ -2587,7 +2711,7 @@
 
         // --- 10. MENU AGENDA GURU & REMINDER ---
         function renderAgendaList() {
-            const agendas = dbGet('guru_agenda');
+            const agendas = dbGet('guru_agenda') || [];
             const filterKategori = document.getElementById('filter-agenda-kategori').value;
             const container = document.getElementById('agenda-items-container');
 
@@ -2641,14 +2765,14 @@
                                 <span class="flex items-center gap-1"><i data-lucide="clock" class="w-3.5 h-3.5"></i> ${a.waktu} WIB</span>
                                 <span class="flex items-center gap-1"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i> ${a.lokasi}</span>
                             </div>
-                            <p class="text-xs text-slate-550 max-w-xl">${a.deskripsi}</p>
+                            <p class="text-xs text-slate-505 max-w-xl">${a.deskripsi}</p>
                         </div>
                         <div class="flex items-center gap-2 self-end md:self-center">
                             <button onclick="toggleAgendaStatus('${a.id}')" class="p-2 bg-emerald-50 text-emerald-600 hover:bg-emerald-100 dark:bg-emerald-955/20 dark:text-emerald-400 rounded-xl" title="Tandai Selesai">
                                 <i data-lucide="${isCompleted ? 'rotate-ccw' : 'check'}" class="w-4 h-4"></i>
                             </button>
                             <button onclick="openAgendaModal('${a.id}')" class="p-2 bg-blue-50 text-blue-600 hover:bg-blue-100 dark:bg-blue-955/20 dark:text-blue-400 rounded-xl" title="Edit"><i data-lucide="edit" class="w-4 h-4"></i></button>
-                            <button onclick="deleteAgendaData('${a.id}')" class="p-2 bg-red-50 text-red-650 hover:bg-red-100 dark:bg-red-955/20 dark:text-red-450 rounded-xl" title="Hapus"><i data-lucide="trash" class="w-4 h-4"></i></button>
+                            <button onclick="deleteAgendaData('${a.id}')" class="p-2 bg-red-50 text-red-650 hover:bg-red-105 dark:bg-red-955/20 dark:text-red-450 rounded-xl" title="Hapus"><i data-lucide="trash" class="w-4 h-4"></i></button>
                         </div>
                     </div>
                 `;
@@ -2669,7 +2793,7 @@
 
             if (id) {
                 title.innerText = "Edit Agenda Kegiatan";
-                const agendas = dbGet('guru_agenda');
+                const agendas = dbGet('guru_agenda') || [];
                 const a = agendas.find(x => x.id === id);
                 if (a) {
                     document.getElementById('agenda-edit-id').value = a.id;
@@ -2717,7 +2841,7 @@
                 return;
             }
 
-            let agendas = dbGet('guru_agenda');
+            let agendas = dbGet('guru_agenda') || [];
 
             if (id) {
                 agendas = agendas.map(a => a.id === id ? { ...a, judul, tanggal, tanggalAkhir, waktu, lokasi, deskripsi, prioritas, kategori, selesai } : a);
@@ -2741,7 +2865,7 @@
         }
 
         function toggleAgendaStatus(id) {
-            let agendas = dbGet('guru_agenda');
+            let agendas = dbGet('guru_agenda') || [];
             agendas = agendas.map(a => {
                 if (a.id === id) {
                     a.selesai = !a.selesai;
@@ -2756,7 +2880,7 @@
 
         function deleteAgendaData(id) {
             showAlert('danger', 'Hapus Agenda', 'Apakah Anda yakin ingin menghapus agenda kegiatan ini?', () => {
-                let agendas = dbGet('guru_agenda');
+                let agendas = dbGet('guru_agenda') || [];
                 agendas = agendas.filter(x => x.id !== id);
                 dbSet('guru_agenda', agendas);
                 renderAgendaList();
@@ -2778,7 +2902,7 @@
             const firstDay = new Date(y, m, 1).getDay();
             const totalDays = new Date(y, m + 1, 0).getDate();
 
-            const agendas = dbGet('guru_agenda');
+            const agendas = dbGet('guru_agenda') || [];
             const userAgendas = currentUser.role === 'ADMIN' ? agendas : agendas.filter(a => a.userId === currentUser.id);
 
             let html = '';
@@ -2789,11 +2913,15 @@
 
             for (let day = 1; day <= totalDays; day++) {
                 const dayStr = `${y}-${String(m + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+                
                 const hasAgenda = userAgendas.filter(a => {
-                    if (a.tanggalAkhir) {
-                        return dayStr >= a.tanggal && dayStr <= a.tanggalAkhir;
+                    const start = cleanDateFormat(a.tanggal);
+                    const end = cleanDateFormat(a.tanggalAkhir);
+                    
+                    if (end && end !== start) {
+                        return dayStr >= start && dayStr <= end;
                     }
-                    return a.tanggal === dayStr;
+                    return start === dayStr;
                 });
 
                 let dotColor = '';
@@ -2818,14 +2946,16 @@
 
         function filterAgendaByDate(dateStr) {
             showAlert('info', 'Kegiatan Tanggal', `Menyaring agenda untuk tanggal: ${formatDateIndo(dateStr)}`);
-            const agendas = dbGet('guru_agenda');
+            const agendas = dbGet('guru_agenda') || [];
             const container = document.getElementById('agenda-items-container');
             
             let filtered = agendas.filter(a => {
-                if (a.tanggalAkhir) {
-                    return dateStr >= a.tanggal && dateStr <= a.tanggalAkhir;
+                const start = cleanDateFormat(a.tanggal);
+                const end = cleanDateFormat(a.tanggalAkhir);
+                if (end && end !== start) {
+                    return dateStr >= start && dateStr <= end;
                 }
-                return a.tanggal === dateStr;
+                return start === dateStr;
             });
             if (currentUser.role !== 'ADMIN') {
                 filtered = filtered.filter(a => a.userId === currentUser.id);
@@ -2865,7 +2995,7 @@
 
         // --- 11. MENU CATATAN WALI KELAS ---
         function renderCatatanTable() {
-            const data = dbGet('guru_catatan');
+            const data = dbGet('guru_catatan') || [];
             const search = document.getElementById('catatan-search').value.toLowerCase();
             const body = document.getElementById('catatan-table-body');
 
@@ -2899,7 +3029,7 @@
                         <td class="p-4 text-right">
                             <div class="flex items-center justify-end gap-1.5">
                                 <button onclick="openCatatanModal('${c.id}')" class="p-1.5 bg-blue-50 text-blue-600 hover:bg-blue-100 rounded-lg"><i data-lucide="edit" class="w-4 h-4"></i></button>
-                                <button onclick="deleteCatatanData('${c.id}')" class="p-1.5 bg-red-50 text-red-650 hover:bg-red-100 dark:bg-red-955/20 dark:text-red-455 rounded-lg"><i data-lucide="trash" class="w-4 h-4"></i></button>
+                                <button onclick="deleteCatatanData('${c.id}')" class="p-1.5 bg-red-50 text-red-650 hover:bg-red-100 dark:bg-red-955/20 dark:text-red-400 rounded-lg"><i data-lucide="trash" class="w-4 h-4"></i></button>
                             </div>
                         </td>
                     </tr>
@@ -2920,7 +3050,7 @@
 
             if (id) {
                 title.innerText = "Edit Catatan Kejadian Siswa";
-                const data = dbGet('guru_catatan');
+                const data = dbGet('guru_catatan') || [];
                 const c = data.find(x => x.id === id);
                 if (c) {
                     document.getElementById('catatan-edit-id').value = c.id;
@@ -2952,7 +3082,7 @@
                 return;
             }
 
-            let data = dbGet('guru_catatan');
+            let data = dbGet('guru_catatan') || [];
 
             if (id) {
                 data = data.map(c => c.id === id ? { ...c, siswa, tanggal, kategori, deskripsi } : c);
@@ -2974,7 +3104,7 @@
 
         function deleteCatatanData(id) {
             showAlert('danger', 'Hapus Catatan', 'Apakah Anda yakin ingin menghapus catatan wali kelas ini?', () => {
-                let data = dbGet('guru_catatan');
+                let data = dbGet('guru_catatan') || [];
                 data = data.filter(c => c.id !== id);
                 dbSet('guru_catatan', data);
                 renderCatatanTable();
@@ -3014,7 +3144,7 @@
                 return;
             }
 
-            let users = dbGet('guru_users');
+            let users = dbGet('guru_users') || [];
             users = users.map(u => {
                 if (u.id === currentUser.id) {
                     u.name = name;
@@ -3027,7 +3157,7 @@
             });
 
             dbSet('guru_users', users);
-            showAlert('success', 'Tersimpan', 'Profil Guru pribadi Anda berhasil terupdate.');
+            showAlert('success', 'Tersimpan', 'Profil Guru pribadi Anda berhasil diperbarui.');
             setupUIForUser();
             loadProfilGuruForm();
         }
@@ -3038,7 +3168,7 @@
                 reader.onload = function(e) {
                     const base64 = e.target.result;
                     
-                    let users = dbGet('guru_users');
+                    let users = dbGet('guru_users') || [];
                     users = users.map(u => {
                         if (u.id === currentUser.id) {
                             u.foto = base64;
@@ -3091,10 +3221,40 @@
         }
 
         // --- 14. EXPORT LAPORAN EXCEL & PDF ---
+        function printJurnalPDF() {
+            const jurnals = dbGet('guru_jurnal') || [];
+            
+            // Dapatkan data jurnal yang difilter saat ini berdasarkan filter UI jika memungkinkan,
+            // atau langsung cetak semua rekap jurnal milik user aktif.
+            let activeJurnals = jurnals;
+            
+            if (currentUser.role !== 'ADMIN') {
+                activeJurnals = activeJurnals.filter(j => j.userId === currentUser.id);
+            } else {
+                const filterGuru = document.getElementById('filter-jurnal-guru') ? document.getElementById('filter-jurnal-guru').value : '';
+                if (filterGuru) {
+                    activeJurnals = activeJurnals.filter(j => j.userId === filterGuru);
+                }
+            }
+            
+            const filterDate = document.getElementById('filter-jurnal-date') ? document.getElementById('filter-jurnal-date').value : '';
+            const filterKelas = document.getElementById('filter-jurnal-kelas') ? document.getElementById('filter-jurnal-kelas').value : '';
+            
+            if (filterDate) activeJurnals = activeJurnals.filter(j => j.tanggal === filterDate);
+            if (filterKelas) activeJurnals = activeJurnals.filter(j => j.kelas === filterKelas);
+
+            if (activeJurnals.length === 0) {
+                showAlert('warning', 'Data Kosong', 'Tidak ada data jurnal harian yang dapat dicetak saat ini.');
+                return;
+            }
+
+            printLaporanCetak('REKAP JURNAL HARIAN GURU', activeJurnals, 'jurnal');
+        }
+
         function exportLaporan(type, format) {
-            const jurnals = dbGet('guru_jurnal');
-            const agendas = dbGet('guru_agenda');
-            const catatans = dbGet('guru_catatan');
+            const jurnals = dbGet('guru_jurnal') || [];
+            const agendas = dbGet('guru_agenda') || [];
+            const catatans = dbGet('guru_catatan') || [];
 
             let dataset = [];
             let filename = '';
@@ -3213,6 +3373,11 @@
             }
 
             const printWindow = window.open('', '_blank');
+            if (!printWindow) {
+                showAlert('warning', 'Pop-up Diblokir', 'Gagal membuka jendela cetak. Harap izinkan pop-up di peramban Anda agar dokumen PDF dapat dicetak.');
+                return;
+            }
+
             printWindow.document.write(`
                 <html>
                 <head>
@@ -3238,7 +3403,10 @@
                         <p><b><u>${school.ks}</u></b><br>Kepala Sekolah<br><span style="font-size:10px; color:#555;">NIP. ${school.nip_ks || '-'}</span></p>
                     </div>
                     <script>
-                        window.onload = function() { window.print(); window.close(); }
+                        window.onload = function() { 
+                            window.print(); 
+                            setTimeout(function() { window.close(); }, 500);
+                        }
                     <\/script>
                 </body>
                 </html>
@@ -3247,13 +3415,18 @@
         }
 
         function printSingleJurnalPDF(id) {
-            const jurnals = dbGet('guru_jurnal');
+            const jurnals = dbGet('guru_jurnal') || [];
             const j = jurnals.find(x => x.id === id);
             if (!j) return;
 
             const school = dbGet('guru_school_profile');
 
             const printWindow = window.open('', '_blank');
+            if (!printWindow) {
+                showAlert('warning', 'Pop-up Diblokir', 'Gagal membuka jendela cetak. Harap izinkan pop-up di peramban Anda agar dokumen PDF dapat dicetak.');
+                return;
+            }
+
             printWindow.document.write(`
                 <html>
                 <head>
@@ -3324,7 +3497,10 @@
                         </tr>
                     </table>
                     <script>
-                        window.onload = function() { window.print(); window.close(); }
+                        window.onload = function() { 
+                            window.print(); 
+                            setTimeout(function() { window.close(); }, 500);
+                        }
                     <\/script>
                 </body>
                 </html>
@@ -3333,7 +3509,7 @@
         }
 
         function printPelajaranPDF() {
-            const data = dbGet('guru_pelajaran');
+            const data = dbGet('guru_pelajaran') || [];
             printLaporanCetak("DAFTAR CAPAIAN & TUJUAN PEMBELAJARAN SEKOLAH", data, "pelajaran-raw");
         }
 
@@ -3386,7 +3562,7 @@
 
         // --- 16. NOTIFICATION SYSTEM ---
         function generateNotifications() {
-            const agendas = dbGet('guru_agenda');
+            const agendas = dbGet('guru_agenda') || [];
             const todayStr = new Date().toISOString().split('T')[0];
             
             let relevantAgendas = agendas;
