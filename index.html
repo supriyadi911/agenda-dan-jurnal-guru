@@ -244,13 +244,20 @@
                 </div>
                 <!-- Notifications & Quick Action -->
                 <div class="flex items-center gap-3">
-                    <!-- Indicator Cloud Status -->
-                    <div id="cloud-sync-status-indicator" class="hidden items-center gap-1 bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 px-3 py-1.5 rounded-xl border border-emerald-100 dark:border-emerald-900 text-xs font-semibold cursor-pointer" onclick="testAndSyncGAS()">
-                        <i data-lucide="cloud-lightning" class="w-4 h-4 animate-pulse"></i>
-                        <span class="hidden sm:inline">Sinkronisasi Awan</span>
+                    <!-- User Avatar Header (Desktop/Tablet) - Minimal & Tidy -->
+                    <div id="header-user-avatar-container" class="flex items-center border-r border-slate-200 dark:border-slate-700 pr-3 mr-1">
+                        <div id="header-user-avatar" class="w-8 h-8 rounded-full bg-primary-600 text-white flex items-center justify-center font-bold text-xs shadow-sm overflow-hidden border border-slate-100 dark:border-slate-700 shrink-0">
+                            G
+                        </div>
                     </div>
-                    
-                    <div class="relative" id="notification-bell-container">
+
+                    <!-- Button Fullscreen Toggle -->
+                    <button onclick="toggleFullscreen()" class="p-2 text-slate-605 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-full" title="Layar Penuh">
+                        <i id="fullscreen-icon" data-lucide="maximize" class="w-5 h-5"></i>
+                    </button>
+
+                    <!-- Indicator Cloud Status -->
+                    <div id="cloud-sync-status-indicator" class="hidden items-center gap-1 bg-emerald-50 dark:bg-emerald-955/40 text-emerald-600 px-3 py-1.5 rounded-xl border border-emerald-100 dark:border-emerald-900 text-xs font-semibold cursor-pointer" onclick="testAndSyncGAS()">
                         <button onclick="toggleNotificationDropdown()" class="p-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-full relative">
                             <i data-lucide="bell" class="w-5 h-5"></i>
                             <span id="notif-badge" class="hidden absolute top-1 right-1 w-2.5 h-2.5 bg-red-500 rounded-full ring-2 ring-white dark:ring-slate-800"></span>
@@ -281,18 +288,35 @@
                 <!-- ==================== DASHBOARD PAGE ==================== -->
                 <section id="page-dashboard" class="space-y-6 page-section">
                     
-                    <!-- Sistem Informasi Sekolah Profil -->
-                    <div class="bg-gradient-to-r from-primary-600 via-primary-700 to-success-600 text-white p-5 rounded-2xl shadow-md flex flex-col md:flex-row md:items-center justify-between gap-4">
-                        <div class="flex items-center gap-4">
+                    <!-- Sistem Informasi Sekolah Profil & Pengguna Aktif (3-Column Layout) -->
+                    <div class="bg-gradient-to-r from-primary-600 via-primary-700 to-success-600 text-white p-5 rounded-2xl shadow-md grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+                        <!-- Kolom 1: Profil Sekolah -->
+                        <div class="flex items-center gap-4 border-b md:border-b-0 md:border-r border-white/15 pb-4 md:pb-0">
                             <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shrink-0 shadow-inner p-1">
                                 <img src="https://i.ibb.co.com/yFyFt7k4/logo-sdn-1-dupaaa.png" alt="Logo Sekolah" class="w-full h-full object-contain">
                             </div>
                             <div>
-                                <h3 class="font-bold text-lg md:text-xl" id="info-school-name">SDN 1 Durian Payung</h3>
-                                <p class="text-xs text-white/90">NPSN: <span id="info-school-npsn" class="font-bold">20211543</span> | Tahun Pelajaran <span id="info-school-tp" class="font-bold">2025/2026</span> - Semester <span id="info-school-semester" class="font-bold">Ganjil</span></p>
+                                <h3 class="font-bold text-base lg:text-lg" id="info-school-name">SDN 1 Durian Payung</h3>
+                                <p class="text-xs text-white/90">NPSN: <span id="info-school-npsn" class="font-bold">20211543</span></p>
+                                <p class="text-[11px] text-white/85">TP <span id="info-school-tp" class="font-bold">2025/2026</span> - <span id="info-school-semester" class="font-bold">Ganjil</span></p>
                             </div>
                         </div>
-                        <div class="text-xs bg-white/10 px-4 py-2.5 rounded-xl border border-white/10 md:text-right space-y-0.5 shrink-0">
+
+                        <!-- Kolom 2: Profil Pengguna Login (Pindahan dari Header) -->
+                        <div class="flex items-center gap-3 border-b md:border-b-0 md:border-r border-white/15 pb-4 md:pb-0">
+                            <div id="dashboard-user-avatar" class="w-11 h-11 rounded-full bg-white/20 text-white flex items-center justify-center font-bold text-sm shrink-0 border border-white/20 overflow-hidden">
+                                G
+                            </div>
+                            <div>
+                                <p class="text-white/70 text-[9px] uppercase tracking-wider font-bold">Pengguna Aktif (Login)</p>
+                                <h4 id="dashboard-user-name" class="font-bold text-sm truncate max-w-[180px]">Nama Guru</h4>
+                                <p id="dashboard-user-nip" class="text-[10px] text-white/85">NIP: -</p>
+                                <span id="dashboard-user-class" class="text-[9px] inline-block bg-white/20 px-2 py-0.5 rounded mt-1 font-bold">Kelas -</span>
+                            </div>
+                        </div>
+
+                        <!-- Kolom 3: Kepala Sekolah -->
+                        <div class="text-xs md:text-right space-y-0.5">
                             <p class="text-white/70 text-[10px] uppercase tracking-wider">Kepala Sekolah</p>
                             <p class="font-bold text-sm" id="info-school-ks">Supriyadi, M.Pd.</p>
                             <p class="text-[10px] text-white/80" id="info-school-nip-ks">NIP: 197511292002121003</p>
@@ -1082,8 +1106,8 @@
     </div>
 
     <!-- 3. JURNAL HARIAN MODAL -->
-    <div id="jurnal-modal" class="hidden fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 overflow-y-auto">
-        <div class="bg-white dark:bg-slate-800 rounded-2xl max-w-2xl w-full p-6 shadow-2xl relative my-8">
+    <div id="jurnal-modal" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-start md:items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-white dark:bg-slate-800 rounded-2xl max-w-2xl w-full p-5 md:p-6 shadow-2xl relative my-4 md:my-8">
             <h3 id="jurnal-modal-title" class="font-bold text-base mb-4">Catat Jurnal Harian Baru</h3>
             <form id="jurnal-form" class="space-y-4 grid grid-cols-1 md:grid-cols-2 gap-4">
                 <input type="hidden" id="jurnal-edit-id">
@@ -1897,6 +1921,44 @@
             document.getElementById('user-name-sidebar').innerText = currentUser.name;
             document.getElementById('user-role-badge').innerText = currentUser.role;
 
+            // Update User Profile Info dynamically in Header (Avatar Only) and Dashboard Card
+            const headerAvatar = document.getElementById('header-user-avatar');
+            const dashName = document.getElementById('dashboard-user-name');
+            const dashNip = document.getElementById('dashboard-user-nip');
+            const dashClass = document.getElementById('dashboard-user-class');
+            const dashAvatar = document.getElementById('dashboard-user-avatar');
+
+            // Populate minimal Header Avatar
+            if (headerAvatar) {
+                if (currentUser.foto) {
+                    headerAvatar.innerHTML = `<img src="${currentUser.foto}" class="w-full h-full object-cover">`;
+                } else {
+                    headerAvatar.innerText = currentUser.name.charAt(0);
+                    headerAvatar.innerHTML = currentUser.name.charAt(0);
+                }
+            }
+
+            // Populate Dashboard User Card (Middle Column of the School Profile banner)
+            if (dashName) dashName.innerText = currentUser.name;
+            if (dashNip) dashNip.innerText = currentUser.nip ? `NIP: ${currentUser.nip}` : 'NIP: -';
+            if (dashClass) {
+                if (currentUser.role === 'ADMIN') {
+                    dashClass.innerText = 'Administrator';
+                    dashClass.className = 'text-[9px] inline-block bg-purple-500/30 text-purple-100 px-2 py-0.5 rounded font-bold mt-1';
+                } else {
+                    dashClass.innerText = currentUser.kelas || '-';
+                    dashClass.className = 'text-[9px] inline-block bg-white/20 px-2 py-0.5 rounded mt-1 font-bold';
+                }
+            }
+            if (dashAvatar) {
+                if (currentUser.foto) {
+                    dashAvatar.innerHTML = `<img src="${currentUser.foto}" class="w-full h-full object-cover">`;
+                } else {
+                    dashAvatar.innerText = currentUser.name.charAt(0);
+                    dashAvatar.innerHTML = currentUser.name.charAt(0);
+                }
+            }
+
             let menuItems = [
                 { id: 'dashboard', name: 'Dashboard', icon: 'layout-dashboard', roles: ['ADMIN', 'GURU'] },
                 { id: 'guru-manajemen', name: 'Manajemen Guru', icon: 'users', roles: ['ADMIN'] },
@@ -1986,7 +2048,31 @@
             }
         }
 
-        // Ambil pengaturan mode gelap dari LocalStorage
+        // Fungsi Toggle Fullscreen / Layar Penuh
+        function toggleFullscreen() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen().catch(err => {
+                    console.log(`Gagal mengaktifkan mode layar penuh: ${err.message}`);
+                });
+            } else {
+                document.exitFullscreen();
+            }
+        }
+
+        // Memantau Perubahan Status Fullscreen untuk Menyelaraskan Ikon Lucide
+        document.addEventListener('fullscreenchange', () => {
+            const fsIcon = document.getElementById('fullscreen-icon');
+            if (fsIcon) {
+                if (document.fullscreenElement) {
+                    fsIcon.setAttribute('data-lucide', 'minimize');
+                } else {
+                    fsIcon.setAttribute('data-lucide', 'maximize');
+                }
+                lucide.createIcons();
+            }
+        });
+
+        // Ambi l pengaturan mode gelap dari LocalStorage
         function initDarkMode() {
             const html = document.querySelector('html');
             const saved = localStorage.getItem('guru_dark_mode');
@@ -2588,6 +2674,17 @@
             let html = '';
             filtered.forEach(j => {
                 const isMyJurnal = j.userId === currentUser.id;
+
+                const usersList = dbGet('guru_users') || [];
+                const teacherObj = usersList.find(u => u.id === j.userId || u.name === j.namaGuru);
+                
+                let displayKelas = "Semua Kelas";
+                if (teacherObj && teacherObj.kelas && teacherObj.kelas !== "undefined" && teacherObj.kelas !== "null") {
+                    displayKelas = teacherObj.kelas;
+                } else if (j.kelas && typeof j.kelas === 'string' && !j.kelas.includes('T') && !j.kelas.includes('-') && j.kelas !== "null" && j.kelas !== "undefined") {
+                    displayKelas = j.kelas;
+                }
+
                 html += `
                     <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50">
                         <td class="p-4 align-top">
@@ -2596,7 +2693,7 @@
                         </td>
                         <td class="p-4 align-top">
                             <h4 class="font-bold text-xs text-slate-900 dark:text-white">${j.namaGuru}</h4>
-                            <span class="text-[10px] bg-slate-100 dark:bg-slate-700 px-2 py-0.5 rounded font-medium">${j.kelas}</span>
+                            <span class="text-[10px] bg-slate-100 dark:bg-slate-700 px-2 py-0.5 rounded font-medium">${displayKelas}</span>
                         </td>
                         <td class="p-4 align-top max-w-xs">
                             <p class="font-bold text-xs text-primary-600 dark:text-primary-400">${j.mapel}</p>
@@ -3368,21 +3465,31 @@
             let tableHTML = '';
 
             if (type === 'jurnal') {
+                const usersList = dbGet('guru_users') || [];
                 tableHTML = `
                     <table border="1" cellpadding="8" style="width:100%; border-collapse:collapse; font-size:11px; margin-top:20px;">
                         <tr style="background-color:#f1f5f9;">
                             <th>Tanggal</th><th>Guru / Kelas</th><th>Mata Pelajaran / Materi</th><th>Hadir</th><th>Absen</th><th>Kegiatan / Refleksi</th>
                         </tr>
-                        ${data.map(j => `
-                            <tr>
-                                <td>${formatDateIndo(j.tanggal)}</td>
-                                <td><b>${j.namaGuru}</b><br>${j.kelas}</td>
-                                <td><b>${j.mapel}</b><br>${j.materi}</td>
-                                <td>${j.hadir}</td>
-                                <td>${j.absen}</td>
-                                <td>${j.kegiatan}<br><i>Refleksi: ${j.refleksi}</i></td>
-                            </tr>
-                        `).join('')}
+                        ${data.map(j => {
+                            const teacherObj = usersList.find(u => u.id === j.userId || u.name === j.namaGuru);
+                            let resolvedKelas = "Semua Kelas";
+                            if (teacherObj && teacherObj.kelas && teacherObj.kelas !== "undefined" && teacherObj.kelas !== "null") {
+                                resolvedKelas = teacherObj.kelas;
+                            } else if (j.kelas && !String(j.kelas).includes('T') && !String(j.kelas).includes('-')) {
+                                resolvedKelas = j.kelas;
+                            }
+                            return `
+                                <tr>
+                                    <td>${formatDateIndo(j.tanggal)}</td>
+                                    <td><b>${j.namaGuru}</b><br>${resolvedKelas}</td>
+                                    <td><b>${j.mapel}</b><br>${j.materi}</td>
+                                    <td>${j.hadir}</td>
+                                    <td>${j.absen}</td>
+                                    <td>${j.kegiatan}<br><i>Refleksi: ${j.refleksi}</i></td>
+                                </tr>
+                            `;
+                        }).join('')}
                     </table>
                 `;
             } else if (type === 'agenda') {
@@ -3494,6 +3601,15 @@
 
             const school = dbGet('guru_school_profile');
 
+            const usersList = dbGet('guru_users') || [];
+            const teacherObj = usersList.find(u => u.id === j.userId || u.name === j.namaGuru);
+            let resolvedKelas = "Semua Kelas";
+            if (teacherObj && teacherObj.kelas && teacherObj.kelas !== "undefined" && teacherObj.kelas !== "null") {
+                resolvedKelas = teacherObj.kelas;
+            } else if (j.kelas && !String(j.kelas).includes('T') && !String(j.kelas).includes('-')) {
+                resolvedKelas = j.kelas;
+            }
+
             const printWindow = window.open('', '_blank');
             if (!printWindow) {
                 showAlert('warning', 'Pop-up Diblokir', 'Gagal membuka jendela cetak. Harap izinkan pop-up di peramban Anda agar dokumen PDF dapat dicetak.');
@@ -3527,7 +3643,7 @@
                         <div class="grid">
                             <div class="item"><span>Tanggal & Hari:</span> ${formatDateIndo(j.tanggal)} (${j.hari})</div>
                             <div class="item"><span>Nama Guru:</span> ${j.namaGuru}</div>
-                            <div class="item"><span>Mengampu Kelas:</span> ${j.kelas}</div>
+                            <div class="item"><span>Mengampu Kelas:</span> ${resolvedKelas}</div>
                             <div class="item"><span>Tahun Pelajaran:</span> ${school.tp}</div>
                         </div>
 
