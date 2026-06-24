@@ -86,6 +86,27 @@
         </div>
     </div>
 
+    <!-- ==================== MODERN DATABASE LOADING OVERLAY ==================== -->
+    <div id="db-loading-overlay" class="hidden fixed inset-0 z-[100] flex items-center justify-center bg-slate-950/40 backdrop-blur-md transition-all duration-500 opacity-0">
+        <div class="bg-white dark:bg-slate-800 p-8 rounded-3xl shadow-2xl max-w-sm w-full border border-slate-100 dark:border-slate-700 text-center space-y-6 transform scale-95 transition-all duration-500">
+            <div class="relative w-20 h-20 mx-auto">
+                <div class="absolute inset-0 rounded-full border-4 border-slate-100 dark:border-slate-700"></div>
+                <div class="absolute inset-0 rounded-full border-4 border-t-primary-500 border-r-primary-500 animate-spin"></div>
+                <div class="absolute inset-2 bg-white dark:bg-slate-800 rounded-full flex items-center justify-center">
+                    <i data-lucide="cloud-lightning" class="w-8 h-8 text-primary-500 animate-bounce"></i>
+                </div>
+            </div>
+            <div class="space-y-2">
+                <h4 id="db-loading-title" class="font-bold text-lg text-slate-800 dark:text-white">Menghubungkan Awan</h4>
+                <p id="db-loading-msg" class="text-xs text-slate-500 dark:text-slate-400">Sinkronisasi data sekolah dan pengguna otomatis...</p>
+            </div>
+            <!-- Mini Progress Indicator -->
+            <div class="w-full h-1 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
+                <div id="db-loading-progress" class="h-full bg-emerald-500 w-0 transition-all duration-300"></div>
+            </div>
+        </div>
+    </div>
+
     <!-- APP WRAPPER -->
     <div id="app-container" class="min-h-screen flex flex-col md:flex-row pb-20 md:pb-0">
 
@@ -145,7 +166,7 @@
                 </form>
 
                 <div class="mt-6 text-center text-xs text-slate-400">
-                    <p class="font-semibold text-slate-505 dark:text-slate-400">Akun bawaan sistem:</p>
+                    <p class="font-semibold text-slate-550 dark:text-slate-400">Akun bawaan sistem:</p>
                     <p>Admin: supriyadi / 291188</p>
                     <p>Guru: guru1 / guru1</p>
                 </div>
@@ -195,7 +216,7 @@
                     </span>
                 </button>
                 <!-- Logout Button -->
-                <button onclick="logout()" class="w-full flex items-center gap-2 px-3 py-2 text-sm text-red-600 dark:text-red-400 hover:bg-red-50 border border-transparent rounded-lg transition-colors">
+                <button onclick="logout()" class="w-full flex items-center gap-2 px-3 py-2 text-sm text-red-655 dark:text-red-400 hover:bg-red-50 border border-transparent rounded-lg transition-colors">
                     <i data-lucide="log-out" class="w-4 h-4"></i>
                     <span>Keluar Sistem</span>
                 </button>
@@ -224,7 +245,7 @@
                 <!-- Notifications & Quick Action -->
                 <div class="flex items-center gap-3">
                     <!-- Indicator Cloud Status -->
-                    <div id="cloud-sync-status-indicator" class="hidden items-center gap-1 bg-emerald-50 dark:bg-emerald-955/40 text-emerald-600 px-3 py-1.5 rounded-xl border border-emerald-100 dark:border-emerald-900 text-xs font-semibold cursor-pointer" onclick="testAndSyncGAS()">
+                    <div id="cloud-sync-status-indicator" class="hidden items-center gap-1 bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 px-3 py-1.5 rounded-xl border border-emerald-100 dark:border-emerald-900 text-xs font-semibold cursor-pointer" onclick="testAndSyncGAS()">
                         <i data-lucide="cloud-lightning" class="w-4 h-4 animate-pulse"></i>
                         <span class="hidden sm:inline">Sinkronisasi Awan</span>
                     </div>
@@ -247,7 +268,7 @@
                         </div>
                     </div>
                     <div class="md:hidden flex items-center">
-                        <button onclick="logout()" class="p-2 text-red-650 hover:bg-red-55/30 rounded-full">
+                        <button onclick="logout()" class="p-2 text-red-605 hover:bg-red-55/30 rounded-full">
                             <i data-lucide="log-out" class="w-5 h-5"></i>
                         </button>
                     </div>
@@ -455,7 +476,7 @@
                         <div class="overflow-x-auto">
                             <table class="w-full text-left border-collapse">
                                 <thead>
-                                    <tr class="bg-slate-50 dark:bg-slate-900 text-slate-400 text-[10px] uppercase font-bold border-b border-slate-100 dark:border-slate-700">
+                                    <tr class="bg-slate-55 dark:bg-slate-900 text-slate-400 text-[10px] uppercase font-bold border-b border-slate-100 dark:border-slate-700">
                                         <th class="p-4">Guru / Admin</th>
                                         <th class="p-4">Role</th>
                                         <th class="p-4">Username & Hak Akses</th>
@@ -972,7 +993,7 @@
                     </div>
                     <div>
                         <label class="block text-xs font-semibold mb-1">Password</label>
-                        <input type="text" id="guru-password" class="w-full px-3 py-2 rounded-xl text-xs border border-slate-200 dark:border-slate-700 bg-slate-55 dark:bg-slate-900" required>
+                        <input type="text" id="guru-password" class="w-full px-3 py-2 rounded-xl text-xs border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900" required>
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-3">
@@ -1092,7 +1113,7 @@
                     </div>
                     <div>
                         <label class="block text-xs font-semibold mb-1">Tujuan Pembelajaran (TP)</label>
-                        <select id="jurnal-tp" class="w-full px-3 py-2 rounded-xl text-xs border border-slate-200 dark:border-slate-700 bg-slate-55 dark:bg-slate-900 text-slate-900 dark:text-white" required>
+                        <select id="jurnal-tp" class="w-full px-3 py-2 rounded-xl text-xs border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white" required>
                             <option value="">Pilih Tujuan Pembelajaran</option>
                         </select>
                     </div>
@@ -1262,7 +1283,7 @@
                 <button onclick="toggleDarkMode(); closeMobileFullMenuModal();" class="w-full flex items-center justify-between px-3 py-2 text-sm rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700">
                     <span class="flex items-center gap-2"><i data-lucide="moon" class="w-4 h-4"></i> Mode Gelap</span>
                 </button>
-                <button onclick="logout()" class="w-full flex items-center gap-2 px-3 py-2 text-sm text-red-655 rounded-lg hover:bg-red-50">
+                <button onclick="logout()" class="w-full flex items-center gap-2 px-3 py-2 text-sm text-red-600 rounded-lg hover:bg-red-50">
                     <i data-lucide="log-out" class="w-4 h-4"></i> Keluar
                 </button>
             </div>
@@ -1451,7 +1472,6 @@
             updateGasStatusUI();
         }
 
-        // Menampilkan status integrasi Google Apps Script
         function updateGasStatusUI() {
             const url = getGasUrl();
             const statusPill = document.getElementById('gas-status-pill');
@@ -1509,7 +1529,40 @@
             }
         }
 
-        // Tes Koneksi dan Ambil/Kirim Data ke Google Sheets
+        // Helper untuk memunculkan/menutup pemuat modern
+        function showDbLoading(title, message) {
+            const overlay = document.getElementById('db-loading-overlay');
+            const card = overlay.querySelector('div');
+            document.getElementById('db-loading-title').innerText = title;
+            document.getElementById('db-loading-msg').innerText = message;
+            document.getElementById('db-loading-progress').style.width = "10%";
+            overlay.classList.remove('hidden');
+            setTimeout(() => {
+                overlay.classList.remove('opacity-0');
+                card.classList.remove('scale-95');
+                card.classList.add('scale-100');
+            }, 50);
+        }
+
+        function updateDbLoadingProgress(percent, message) {
+            document.getElementById('db-loading-progress').style.width = percent + "%";
+            if (message) {
+                document.getElementById('db-loading-msg').innerText = message;
+            }
+        }
+
+        function hideDbLoading() {
+            const overlay = document.getElementById('db-loading-overlay');
+            const card = overlay.querySelector('div');
+            overlay.classList.add('opacity-0');
+            card.classList.remove('scale-100');
+            card.classList.add('scale-95');
+            setTimeout(() => {
+                overlay.classList.add('hidden');
+            }, 500);
+        }
+
+        // Tes Koneksi dan Ambil/Kirim Data ke Google Sheets dengan overlay loading modern
         async function testAndSyncGAS(isSilent = false) {
             const gasUrl = getGasUrl();
             if (!gasUrl) {
@@ -1520,7 +1573,7 @@
             }
 
             if (!isSilent) {
-                showAlert('info', 'Sinkronisasi', 'Sedang menghubungi Google Sheets, mohon tunggu sebentar...');
+                showDbLoading('Menghubungkan Awan', 'Membuka jalur sinkronisasi Google Sheets...');
             }
 
             try {
@@ -1528,7 +1581,13 @@
                 let sheetsEmpty = true;
                 let downloadedData = {};
 
-                for (const table of tables) {
+                for (let i = 0; i < tables.length; i++) {
+                    const table = tables[i];
+                    if (!isSilent) {
+                        const progress = Math.round(((i) / tables.length) * 80);
+                        updateDbLoadingProgress(progress, `Mengunduh tabel data ${table}...`);
+                        await sleep(150); // Pemanis jeda transisi bar loading
+                    }
                     const controller = new AbortController();
                     const timeoutId = setTimeout(() => controller.abort(), 10000);
                     const response = await fetch(`${gasUrl}?action=read&type=${table}`, { signal: controller.signal });
@@ -1545,7 +1604,7 @@
 
                 if (sheetsEmpty) {
                     if (!isSilent) {
-                        showAlert('info', 'Mengunggah Data', 'Google Sheets baru terdeteksi kosong. Menginisialisasi & mengunggah data lokal...');
+                        updateDbLoadingProgress(85, 'Spreadsheet kosong, mengunggah data lokal...');
                     }
                     
                     const localKeys = {
@@ -1575,9 +1634,16 @@
                         clearTimeout(timeoutId);
                     }
                     if (!isSilent) {
-                        showAlert('success', 'Sinkronisasi Berhasil', 'Inisialisasi berhasil! Seluruh data lokal telah diunggah ke Google Sheets.');
+                        updateDbLoadingProgress(100, 'Koneksi & Sinkronisasi selesai!');
+                        setTimeout(() => {
+                            hideDbLoading();
+                            showAlert('success', 'Sinkronisasi Berhasil', 'Inisialisasi berhasil! Seluruh data lokal telah diunggah ke Google Sheets.');
+                        }, 600);
                     }
                 } else {
+                    if (!isSilent) {
+                        updateDbLoadingProgress(95, 'Menyelaraskan data lokal...');
+                    }
                     if (downloadedData.profile) localStorage.setItem('guru_school_profile', JSON.stringify(downloadedData.profile[0]));
                     if (downloadedData.users) {
                         let cloudUsers = downloadedData.users;
@@ -1644,7 +1710,11 @@
                     }
 
                     if (!isSilent) {
-                        showAlert('success', 'Sinkronisasi Berhasil', 'Data terbaru berhasil diunduh dari Google Sheets & disinkronkan ke dalam perangkat ini!');
+                        updateDbLoadingProgress(100, 'Berhasil disinkronkan!');
+                        setTimeout(() => {
+                            hideDbLoading();
+                            showAlert('success', 'Sinkronisasi Berhasil', 'Data terbaru berhasil diunduh dari Google Sheets & disinkronkan ke dalam perangkat ini!');
+                        }, 600);
                     }
                     
                     if (currentUser) {
@@ -1655,6 +1725,7 @@
             } catch (err) {
                 console.log("Koneksi awan Google Sheets tidak tersedia saat ini. Berjalan dalam mode luring lokal.");
                 if (!isSilent) {
+                    hideDbLoading();
                     showAlert('danger', 'Koneksi Gagal', 'Gagal terhubung dengan Google Apps Script. Pastikan Web App URL Anda benar dan status deployment-nya Aktif (Anyone).');
                 }
                 throw err;
@@ -2172,7 +2243,7 @@
                             ${roleBadge}
                         </td>
                         <td class="p-4">
-                            <p class="font-semibold text-xs text-slate-800 dark:text-slate-205">User: ${u.username}</p>
+                            <p class="font-semibold text-xs text-slate-800 dark:text-slate-200">User: ${u.username}</p>
                             <p class="text-[10px] text-slate-400">Sandi: ${u.password}</p>
                         </td>
                         <td class="p-4 font-semibold text-xs">${u.kelas}</td>
@@ -2185,7 +2256,7 @@
                         <td class="p-4 text-right">
                             <div class="flex items-center justify-end gap-1.5">
                                 <button onclick="openGuruModal('${u.id}')" class="p-1.5 bg-blue-50 text-blue-600 hover:bg-blue-100 dark:bg-blue-955/20 dark:text-blue-400 rounded-lg"><i data-lucide="edit" class="w-4 h-4"></i></button>
-                                <button onclick="deleteGuruData('${u.id}')" ${isSelf ? 'disabled class="p-1.5 bg-gray-100 text-gray-400 dark:bg-gray-800 dark:text-gray-600 rounded-lg cursor-not-allowed" title="Tidak bisa menghapus akun sendiri"' : 'class="p-1.5 bg-red-50 text-red-650 hover:bg-red-105 dark:bg-red-955/20 dark:text-red-450 rounded-lg"'}><i data-lucide="trash" class="w-4 h-4"></i></button>
+                                <button onclick="deleteGuruData('${u.id}')" ${isSelf ? 'disabled class="p-1.5 bg-gray-100 text-gray-400 dark:bg-gray-800 dark:text-gray-600 rounded-lg cursor-not-allowed" title="Tidak bisa menghapus akun sendiri"' : 'class="p-1.5 bg-red-50 text-red-650 hover:bg-red-100 dark:bg-red-955/20 dark:text-red-400 rounded-lg"'}><i data-lucide="trash" class="w-4 h-4"></i></button>
                             </div>
                         </td>
                     </tr>
@@ -2230,6 +2301,7 @@
             document.getElementById('guru-modal').classList.add('hidden');
         }
 
+        // Simpan data guru
         function saveGuruData() {
             const id = document.getElementById('guru-edit-id').value;
             const name = document.getElementById('guru-nama').value.trim();
@@ -2270,6 +2342,7 @@
             renderGuruTable();
         }
 
+        // status akun
         function toggleGuruStatus(id) {
             if (id === currentUser.id) {
                 showAlert('warning', 'Aksi Ditolak', 'Anda tidak dapat menonaktifkan akun Anda sendiri.');
@@ -2350,7 +2423,7 @@
                         <td class="p-4 text-right align-top">
                             <div class="flex items-center justify-end gap-1.5">
                                 <button onclick="openPelajaranModal('${p.id}')" class="p-1.5 bg-blue-50 text-blue-600 hover:bg-blue-100 rounded-lg"><i data-lucide="edit" class="w-4 h-4"></i></button>
-                                <button onclick="deletePelajaranData('${p.id}')" class="p-1.5 bg-red-650 hover:bg-red-105 dark:bg-red-955/20 dark:text-red-455 rounded-lg"><i data-lucide="trash" class="w-4 h-4"></i></button>
+                                <button onclick="deletePelajaranData('${p.id}')" class="p-1.5 bg-red-600 hover:bg-red-700 text-white rounded-xl text-xs font-semibold"><i data-lucide="trash" class="w-4 h-4"></i></button>
                             </div>
                         </td>
                     </tr>
@@ -2466,7 +2539,7 @@
                 container.classList.remove('hidden');
                 let options = '<option value="">Semua Guru</option>';
                 users.filter(u => u.role === 'GURU').forEach(g => {
-                    options += `<option value="${g.id}">${g.name}</option>`;
+                    options += `<option value="${g.id}">${g.name}</option>';`;
                 });
                 select.innerHTML = options;
             } else {
@@ -2535,15 +2608,15 @@
                             <p class="text-red-500 font-medium">Absen: ${j.absen}</p>
                         </td>
                         <td class="p-4 align-top max-w-xs text-xs">
-                            <p class="font-semibold text-amber-600">Kendala: <span class="text-slate-505 font-normal">${j.kendala || '-'}</span></p>
-                            <p class="font-semibold text-emerald-600 mt-1">Tindak Lanjut: <span class="text-slate-505 font-normal">${j.tindaklanjut || '-'}</span></p>
+                            <p class="font-semibold text-amber-600">Kendala: <span class="text-slate-500 font-normal">${j.kendala || '-'}</span></p>
+                            <p class="font-semibold text-emerald-600 mt-1">Tindak Lanjut: <span class="text-slate-500 font-normal">${j.tindaklanjut || '-'}</span></p>
                         </td>
                         <td class="p-4 text-right align-top">
                             <div class="flex items-center justify-end gap-1">
                                 <button onclick="printSingleJurnalPDF('${j.id}')" class="p-1.5 bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 rounded-lg text-slate-600 dark:text-slate-300" title="Cetak Jurnal"><i data-lucide="printer" class="w-4 h-4"></i></button>
                                 ${isMyJurnal ? `
                                     <button onclick="openJurnalModal('${j.id}')" class="p-1.5 bg-blue-50 text-blue-600 hover:bg-blue-100 rounded-lg"><i data-lucide="edit" class="w-4 h-4"></i></button>
-                                    <button onclick="deleteJurnalData('${j.id}')" class="p-1.5 bg-red-50 text-red-650 hover:bg-red-105 dark:bg-red-955/25 dark:text-red-455 rounded-lg"><i data-lucide="trash" class="w-4 h-4"></i></button>
+                                    <button onclick="deleteJurnalData('${j.id}')" class="p-1.5 bg-red-50 text-red-600 hover:bg-red-105 dark:bg-red-955/25 dark:text-red-450 rounded-lg"><i data-lucide="trash" class="w-4 h-4"></i></button>
                                 ` : ''}
                             </div>
                         </td>
@@ -2752,7 +2825,7 @@
                 const dateRangeText = a.tanggalAkhir ? `${formatDateIndo(a.tanggal)} s.d. ${formatDateIndo(a.tanggalAkhir)}` : formatDateIndo(a.tanggal);
 
                 html += `
-                    <div class="p-4 bg-slate-50 dark:bg-slate-900/50 rounded-xl border ${isCompleted ? 'border-slate-200 opacity-60' : 'border-slate-100 hover:border-primary-400'} flex flex-col md:flex-row md:items-center justify-between gap-4 transition-all">
+                    <div class="p-4 bg-slate-55 dark:bg-slate-900/50 rounded-xl border ${isCompleted ? 'border-slate-200 opacity-60' : 'border-slate-100 hover:border-primary-400'} flex flex-col md:flex-row md:items-center justify-between gap-4 transition-all">
                         <div class="space-y-1.5">
                             <div class="flex flex-wrap items-center gap-2">
                                 <span class="text-[10px] uppercase font-extrabold px-2 py-0.5 rounded ${pBadge}">${a.prioritas}</span>
@@ -2765,7 +2838,7 @@
                                 <span class="flex items-center gap-1"><i data-lucide="clock" class="w-3.5 h-3.5"></i> ${a.waktu} WIB</span>
                                 <span class="flex items-center gap-1"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i> ${a.lokasi}</span>
                             </div>
-                            <p class="text-xs text-slate-505 max-w-xl">${a.deskripsi}</p>
+                            <p class="text-xs text-slate-550 max-w-xl">${a.deskripsi}</p>
                         </div>
                         <div class="flex items-center gap-2 self-end md:self-center">
                             <button onclick="toggleAgendaStatus('${a.id}')" class="p-2 bg-emerald-50 text-emerald-600 hover:bg-emerald-100 dark:bg-emerald-955/20 dark:text-emerald-400 rounded-xl" title="Tandai Selesai">
@@ -3029,7 +3102,7 @@
                         <td class="p-4 text-right">
                             <div class="flex items-center justify-end gap-1.5">
                                 <button onclick="openCatatanModal('${c.id}')" class="p-1.5 bg-blue-50 text-blue-600 hover:bg-blue-100 rounded-lg"><i data-lucide="edit" class="w-4 h-4"></i></button>
-                                <button onclick="deleteCatatanData('${c.id}')" class="p-1.5 bg-red-50 text-red-650 hover:bg-red-100 dark:bg-red-955/20 dark:text-red-400 rounded-lg"><i data-lucide="trash" class="w-4 h-4"></i></button>
+                                <button onclick="deleteCatatanData('${c.id}')" class="p-1.5 bg-red-50 text-red-650 hover:bg-red-100 dark:bg-red-955/20 dark:text-red-455 rounded-lg"><i data-lucide="trash" class="w-4 h-4"></i></button>
                             </div>
                         </td>
                     </tr>
@@ -3603,6 +3676,7 @@
             dropdown.classList.toggle('hidden');
         }
 
+        // Tampilkan daftar notifikasi di bel
         function renderNotificationList() {
             const container = document.getElementById('notif-list');
             if (notifications.length === 0) {
@@ -3673,11 +3747,10 @@
                 splash.classList.add('hidden');
             }
 
-            // Menjalankan sinkronisasi database (Google Sheets) di latar belakang
-            // tanpa memblokir atau memperlambat animasi Splash Screen
+            // OTOMATIS: Berhubungan ke database via Web App setelah splash screen selesai
             const gasUrl = getGasUrl();
             if (gasUrl) {
-                testAndSyncGAS(true).catch(e => console.log("Gagal sinkron background", e));
+                testAndSyncGAS(false).catch(e => console.log("Gagal sinkron awal", e));
             }
         }
 
