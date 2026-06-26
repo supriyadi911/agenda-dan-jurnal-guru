@@ -166,7 +166,7 @@
                 </form>
 
                 <div class="mt-6 text-center text-xs text-slate-400">
-                    <p class="font-semibold text-slate-550 dark:text-slate-400">Akun bawaan sistem:</p>
+                    <p class="font-semibold text-slate-555 dark:text-slate-400">Akun bawaan sistem:</p>
                     <p>Admin: supriyadi / 291188</p>
                     <p>Guru: guru1 / guru1</p>
                 </div>
@@ -216,7 +216,7 @@
                     </span>
                 </button>
                 <!-- Logout Button -->
-                <button onclick="logout()" class="w-full flex items-center gap-2 px-3 py-2 text-sm text-red-655 dark:text-red-400 hover:bg-red-50 border border-transparent rounded-lg transition-colors">
+                <button onclick="logout()" class="w-full flex items-center gap-2 px-3 py-2 text-sm text-red-600 dark:text-red-400 hover:bg-red-50 border border-transparent rounded-lg transition-colors">
                     <i data-lucide="log-out" class="w-4 h-4"></i>
                     <span>Keluar Sistem</span>
                 </button>
@@ -242,7 +242,7 @@
                         <p class="text-xs text-slate-400 hidden md:block">Selamat datang kembali di portal administrasi guru.</p>
                     </div>
                 </div>
-                <!-- Notifications & Quick Action -->
+                <!-- Notifications, Fullscreen & Sync Actions (Resolved Overlapping Bug) -->
                 <div class="flex items-center gap-3">
                     <!-- User Avatar Header (Desktop/Tablet) - Minimal & Tidy -->
                     <div id="header-user-avatar-container" class="flex items-center border-r border-slate-200 dark:border-slate-700 pr-3 mr-1">
@@ -256,9 +256,15 @@
                         <i id="fullscreen-icon" data-lucide="maximize" class="w-5 h-5"></i>
                     </button>
 
-                    <!-- Indicator Cloud Status -->
-                    <div id="cloud-sync-status-indicator" class="hidden items-center gap-1 bg-emerald-50 dark:bg-emerald-955/40 text-emerald-600 px-3 py-1.5 rounded-xl border border-emerald-100 dark:border-emerald-900 text-xs font-semibold cursor-pointer" onclick="testAndSyncGAS()">
-                        <button onclick="toggleNotificationDropdown()" class="p-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-full relative">
+                    <!-- Indicator Cloud Status (SINKRONISASI AWAN) - SEKARANG MANDIRI -->
+                    <div id="cloud-sync-status-indicator" class="hidden flex items-center gap-1 bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 px-3 py-1.5 rounded-xl border border-emerald-100 dark:border-emerald-900 text-xs font-semibold cursor-pointer" onclick="testAndSyncGAS()" title="Mulai Sinkronisasi Awan">
+                        <i data-lucide="cloud-lightning" class="w-4 h-4 animate-pulse"></i>
+                        <span class="hidden sm:inline">Sinkronisasi Awan</span>
+                    </div>
+
+                    <!-- NOTIFIKASI LONCENG - ELEMEN MANDIRI (TIDAK LAGI MENUMPUK DI DALAM TOMBOL SINKRONISASI) -->
+                    <div class="relative" id="notification-bell-container">
+                        <button onclick="toggleNotificationDropdown()" class="p-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-full relative" title="Notifikasi Kegiatan">
                             <i data-lucide="bell" class="w-5 h-5"></i>
                             <span id="notif-badge" class="hidden absolute top-1 right-1 w-2.5 h-2.5 bg-red-500 rounded-full ring-2 ring-white dark:ring-slate-800"></span>
                         </button>
@@ -274,8 +280,9 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="md:hidden flex items-center">
-                        <button onclick="logout()" class="p-2 text-red-605 hover:bg-red-55/30 rounded-full">
+                        <button onclick="logout()" class="p-2 text-red-600 hover:bg-red-55/30 rounded-full">
                             <i data-lucide="log-out" class="w-5 h-5"></i>
                         </button>
                     </div>
@@ -416,7 +423,7 @@
                                         <i data-lucide="calendar" class="w-5 h-5 text-primary-500"></i>
                                         Kalender Akademik Terdekat
                                     </h3>
-                                    <button class="text-xs text-primary-500 hover:underline">Lihat Semua</button>
+                                    <button class="text-xs text-primary-505 hover:underline">Lihat Semua</button>
                                 </div>
                                 <div class="space-y-3">
                                     <div class="flex items-start gap-4 p-3 bg-slate-50 dark:bg-slate-900/50 rounded-xl border-l-4 border-emerald-500">
@@ -500,7 +507,7 @@
                         <div class="overflow-x-auto">
                             <table class="w-full text-left border-collapse">
                                 <thead>
-                                    <tr class="bg-slate-55 dark:bg-slate-900 text-slate-400 text-[10px] uppercase font-bold border-b border-slate-100 dark:border-slate-700">
+                                    <tr class="bg-slate-50 dark:bg-slate-900 text-slate-400 text-[10px] uppercase font-bold border-b border-slate-100 dark:border-slate-700">
                                         <th class="p-4">Guru / Admin</th>
                                         <th class="p-4">Role</th>
                                         <th class="p-4">Username & Hak Akses</th>
@@ -546,7 +553,7 @@
                                     <span class="absolute inset-y-0 flex items-center pl-3 text-slate-400">
                                         <i data-lucide="search" class="w-4 h-4"></i>
                                     </span>
-                                    <input type="text" id="pelajaran-search" oninput="renderPelajaranTable()" class="w-full pl-9 pr-4 py-2 rounded-xl text-xs border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 focus:outline-none focus:ring-1 focus:ring-primary-550" placeholder="Cari CP/TP...">
+                                    <input type="text" id="pelajaran-search" oninput="renderPelajaranTable()" class="w-full pl-9 pr-4 py-2 rounded-xl text-xs border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 focus:outline-none focus:ring-1 focus:ring-primary-500" placeholder="Cari CP/TP...">
                                 </div>
                                 <div id="admin-pelajaran-filter-container">
                                     <select id="filter-pelajaran-kelas" onchange="renderPelajaranTable()" class="px-3 py-2 rounded-xl text-xs border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-slate-700 dark:text-slate-300">
@@ -859,19 +866,19 @@
                         <form id="guru-profil-form" class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div>
                                 <label class="block text-xs font-semibold mb-1">Nama Lengkap & Gelar</label>
-                                <input type="text" id="prof-nama" class="w-full px-3 py-2 rounded-xl text-xs border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-white" required>
+                                <input type="text" id="prof-nama" class="w-full px-3 py-2 rounded-xl text-xs border border-slate-200 dark:border-slate-700 bg-slate-55 dark:bg-slate-900 text-slate-800 dark:text-white" required>
                             </div>
                             <div>
                                 <label class="block text-xs font-semibold mb-1">NIP / NUPTK</label>
-                                <input type="text" id="prof-nip" class="w-full px-3 py-2 rounded-xl text-xs border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-white" required>
+                                <input type="text" id="prof-nip" class="w-full px-3 py-2 rounded-xl text-xs border border-slate-200 dark:border-slate-700 bg-slate-55 dark:bg-slate-900 text-slate-800 dark:text-white" required>
                             </div>
                             <div>
                                 <label class="block text-xs font-semibold mb-1">Jabatan</label>
-                                <input type="text" id="prof-jabatan" class="w-full px-3 py-2 rounded-xl text-xs border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-white" required>
+                                <input type="text" id="prof-jabatan" class="w-full px-3 py-2 rounded-xl text-xs border border-slate-200 dark:border-slate-700 bg-slate-55 dark:bg-slate-900 text-slate-800 dark:text-white" required>
                             </div>
                             <div>
                                 <label class="block text-xs font-semibold mb-1">Kelas yang Diampu</label>
-                                <select id="prof-kelas" class="w-full px-3 py-2 rounded-xl text-xs border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-white" required>
+                                <select id="prof-kelas" class="w-full px-3 py-2 rounded-xl text-xs border border-slate-200 dark:border-slate-700 bg-slate-55 dark:bg-slate-900 text-slate-800 dark:text-white" required>
                                     <option value="Kelas 1">Kelas 1</option>
                                     <option value="Kelas 2">Kelas 2</option>
                                     <option value="Kelas 3">Kelas 3</option>
@@ -1115,11 +1122,11 @@
                 <div class="space-y-4">
                     <div>
                         <label class="block text-xs font-semibold mb-1">Tanggal & Hari</label>
-                        <input type="date" id="jurnal-tanggal" onchange="autoFillHari()" class="w-full px-3 py-2 rounded-xl text-xs border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white" required>
+                        <input type="date" id="jurnal-tanggal" onchange="autoFillHari()" class="w-full px-3 py-2 rounded-xl text-xs border border-slate-200 dark:border-slate-700 bg-slate-55 dark:bg-slate-900 text-slate-900 dark:text-white" required>
                     </div>
                     <div>
                         <label class="block text-xs font-semibold mb-1">Hari</label>
-                        <input type="text" id="jurnal-hari" class="w-full px-3 py-2 rounded-xl text-xs border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-900 text-slate-500" readonly>
+                        <input type="text" id="jurnal-hari" class="w-full px-3 py-2 rounded-xl text-xs border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-900 text-slate-505" readonly>
                     </div>
                     <div>
                         <label class="block text-xs font-semibold mb-1">Pilih Mata Pelajaran (CP/TP)</label>
@@ -1133,7 +1140,7 @@
                     </div>
                     <div>
                         <label class="block text-xs font-semibold mb-1">Capaian Pembelajaran (CP)</label>
-                        <textarea id="jurnal-cp" rows="3" class="w-full px-3 py-2 rounded-xl text-xs border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-900 text-slate-500" readonly></textarea>
+                        <textarea id="jurnal-cp" rows="3" class="w-full px-3 py-2 rounded-xl text-xs border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-900 text-slate-505" readonly></textarea>
                     </div>
                     <div>
                         <label class="block text-xs font-semibold mb-1">Tujuan Pembelajaran (TP)</label>
@@ -1307,7 +1314,7 @@
                 <button onclick="toggleDarkMode(); closeMobileFullMenuModal();" class="w-full flex items-center justify-between px-3 py-2 text-sm rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700">
                     <span class="flex items-center gap-2"><i data-lucide="moon" class="w-4 h-4"></i> Mode Gelap</span>
                 </button>
-                <button onclick="logout()" class="w-full flex items-center gap-2 px-3 py-2 text-sm text-red-600 rounded-lg hover:bg-red-50">
+                <button onclick="logout()" class="w-full flex items-center gap-2 px-3 py-2 text-sm text-red-655 rounded-lg hover:bg-red-50">
                     <i data-lucide="log-out" class="w-4 h-4"></i> Keluar
                 </button>
             </div>
@@ -1568,6 +1575,7 @@
             }, 50);
         }
 
+        // Memperbarui kemajuan muatan database
         function updateDbLoadingProgress(percent, message) {
             document.getElementById('db-loading-progress').style.width = percent + "%";
             if (message) {
@@ -1984,6 +1992,7 @@
             });
             sidebarNav.innerHTML = sidebarHTML;
 
+            let mobileHTML = '';
             let mobileItems = [
                 { id: 'dashboard', name: 'Dashboard', icon: 'home' },
                 { id: 'jurnal-harian', name: 'Jurnal', icon: 'book' },
@@ -1998,10 +2007,9 @@
                 mobileItems.push({ id: 'pengaturan', name: 'Set', icon: 'settings' });
             }
 
-            let mobileHTML = '';
             mobileItems.forEach(item => {
                 mobileHTML += `
-                    <button onclick="switchTab('${item.id}')" data-tab="${item.id}" class="mobile-menu-item flex flex-col items-center justify-center flex-1 py-1 text-slate-500 hover:text-primary-600 transition-colors">
+                    <button onclick="switchTab('${item.id}')" data-tab="${item.id}" class="mobile-menu-item flex flex-col items-center justify-center flex-1 py-1 text-slate-555 hover:text-primary-600 transition-colors">
                         <i data-lucide="${item.icon}" class="w-5 h-5"></i>
                         <span class="text-[10px] mt-1 font-medium">${item.name}</span>
                     </button>
@@ -2013,8 +2021,8 @@
             menuItems.forEach(item => {
                 if (item.roles.includes(currentUser.role)) {
                     fullMobileMenuHTML += `
-                        <button onclick="switchTab('${item.id}'); closeMobileFullMenuModal();" class="flex items-center gap-3 w-full px-4 py-3 text-sm font-semibold rounded-xl text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700">
-                            <i data-lucide="${item.icon}" class="w-5 h-5 text-slate-500"></i>
+                        <button onclick="switchTab('${item.id}'); closeMobileFullMenuModal();" class="flex items-center gap-3 w-full px-4 py-3 text-sm font-semibold rounded-xl text-slate-700 dark:text-slate-300 hover:bg-slate-105 dark:hover:bg-slate-700">
+                            <i data-lucide="${item.icon}" class="w-5 h-5 text-slate-550"></i>
                             <span>${item.name}</span>
                         </button>
                     `;
@@ -2072,7 +2080,7 @@
             }
         });
 
-        // Ambi l pengaturan mode gelap dari LocalStorage
+        // Ambil pengaturan mode gelap dari LocalStorage
         function initDarkMode() {
             const html = document.querySelector('html');
             const saved = localStorage.getItem('guru_dark_mode');
@@ -2329,7 +2337,7 @@
                             ${roleBadge}
                         </td>
                         <td class="p-4">
-                            <p class="font-semibold text-xs text-slate-800 dark:text-slate-200">User: ${u.username}</p>
+                            <p class="font-semibold text-xs text-slate-800 dark:text-slate-202">User: ${u.username}</p>
                             <p class="text-[10px] text-slate-400">Sandi: ${u.password}</p>
                         </td>
                         <td class="p-4 font-semibold text-xs">${u.kelas}</td>
@@ -2342,7 +2350,7 @@
                         <td class="p-4 text-right">
                             <div class="flex items-center justify-end gap-1.5">
                                 <button onclick="openGuruModal('${u.id}')" class="p-1.5 bg-blue-50 text-blue-600 hover:bg-blue-100 dark:bg-blue-955/20 dark:text-blue-400 rounded-lg"><i data-lucide="edit" class="w-4 h-4"></i></button>
-                                <button onclick="deleteGuruData('${u.id}')" ${isSelf ? 'disabled class="p-1.5 bg-gray-100 text-gray-400 dark:bg-gray-800 dark:text-gray-600 rounded-lg cursor-not-allowed" title="Tidak bisa menghapus akun sendiri"' : 'class="p-1.5 bg-red-50 text-red-650 hover:bg-red-100 dark:bg-red-955/20 dark:text-red-400 rounded-lg"'}><i data-lucide="trash" class="w-4 h-4"></i></button>
+                                <button onclick="deleteGuruData('${u.id}')" ${isSelf ? 'disabled class="p-1.5 bg-gray-100 text-gray-400 dark:bg-gray-800 dark:text-gray-600 rounded-lg cursor-not-allowed" title="Tidak bisa menghapus akun sendiri"' : 'class="p-1.5 bg-red-50 text-red-600 hover:bg-red-100 dark:bg-red-955/20 dark:text-red-400 rounded-lg"'}><i data-lucide="trash" class="w-4 h-4"></i></button>
                             </div>
                         </td>
                     </tr>
@@ -2387,7 +2395,6 @@
             document.getElementById('guru-modal').classList.add('hidden');
         }
 
-        // Simpan data guru
         function saveGuruData() {
             const id = document.getElementById('guru-edit-id').value;
             const name = document.getElementById('guru-nama').value.trim();
@@ -2428,7 +2435,6 @@
             renderGuruTable();
         }
 
-        // status akun
         function toggleGuruStatus(id) {
             if (id === currentUser.id) {
                 showAlert('warning', 'Aksi Ditolak', 'Anda tidak dapat menonaktifkan akun Anda sendiri.');
@@ -2494,7 +2500,7 @@
                 let tpList = '';
                 const arrTp = Array.isArray(p.tp) ? p.tp : [];
                 arrTp.forEach(t => {
-                    tpList += `<li class="list-disc ml-4 text-xs text-slate-550">${t}</li>`;
+                    tpList += `<li class="list-disc ml-4 text-xs text-slate-555">${t}</li>`;
                 });
 
                 html += `
@@ -2509,7 +2515,7 @@
                         <td class="p-4 text-right align-top">
                             <div class="flex items-center justify-end gap-1.5">
                                 <button onclick="openPelajaranModal('${p.id}')" class="p-1.5 bg-blue-50 text-blue-600 hover:bg-blue-100 rounded-lg"><i data-lucide="edit" class="w-4 h-4"></i></button>
-                                <button onclick="deletePelajaranData('${p.id}')" class="p-1.5 bg-red-600 hover:bg-red-700 text-white rounded-xl text-xs font-semibold"><i data-lucide="trash" class="w-4 h-4"></i></button>
+                                <button onclick="deletePelajaranData('${p.id}')" class="p-1.5 bg-red-600 text-white rounded-xl text-xs font-semibold"><i data-lucide="trash" class="w-4 h-4"></i></button>
                             </div>
                         </td>
                     </tr>
@@ -2702,18 +2708,18 @@
                         </td>
                         <td class="p-4 align-top text-xs">
                             <p class="font-bold text-emerald-600">Hadir: ${j.hadir}</p>
-                            <p class="text-red-500 font-medium">Absen: ${j.absen}</p>
+                            <p class="text-red-550 font-medium">Absen: ${j.absen}</p>
                         </td>
                         <td class="p-4 align-top max-w-xs text-xs">
-                            <p class="font-semibold text-amber-600">Kendala: <span class="text-slate-500 font-normal">${j.kendala || '-'}</span></p>
-                            <p class="font-semibold text-emerald-600 mt-1">Tindak Lanjut: <span class="text-slate-500 font-normal">${j.tindaklanjut || '-'}</span></p>
+                            <p class="font-semibold text-amber-600">Kendala: <span class="text-slate-505 font-normal">${j.kendala || '-'}</span></p>
+                            <p class="font-semibold text-emerald-600 mt-1">Tindak Lanjut: <span class="text-slate-505 font-normal">${j.tindaklanjut || '-'}</span></p>
                         </td>
                         <td class="p-4 text-right align-top">
                             <div class="flex items-center justify-end gap-1">
                                 <button onclick="printSingleJurnalPDF('${j.id}')" class="p-1.5 bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 rounded-lg text-slate-600 dark:text-slate-300" title="Cetak Jurnal"><i data-lucide="printer" class="w-4 h-4"></i></button>
                                 ${isMyJurnal ? `
                                     <button onclick="openJurnalModal('${j.id}')" class="p-1.5 bg-blue-50 text-blue-600 hover:bg-blue-100 rounded-lg"><i data-lucide="edit" class="w-4 h-4"></i></button>
-                                    <button onclick="deleteJurnalData('${j.id}')" class="p-1.5 bg-red-50 text-red-600 hover:bg-red-105 dark:bg-red-955/25 dark:text-red-450 rounded-lg"><i data-lucide="trash" class="w-4 h-4"></i></button>
+                                    <button onclick="deleteJurnalData('${j.id}')" class="p-1.5 bg-red-600 hover:bg-red-700 text-white rounded-xl text-xs font-semibold"><i data-lucide="trash" class="w-4 h-4"></i></button>
                                 ` : ''}
                             </div>
                         </td>
@@ -2922,7 +2928,7 @@
                 const dateRangeText = a.tanggalAkhir ? `${formatDateIndo(a.tanggal)} s.d. ${formatDateIndo(a.tanggalAkhir)}` : formatDateIndo(a.tanggal);
 
                 html += `
-                    <div class="p-4 bg-slate-55 dark:bg-slate-900/50 rounded-xl border ${isCompleted ? 'border-slate-200 opacity-60' : 'border-slate-100 hover:border-primary-400'} flex flex-col md:flex-row md:items-center justify-between gap-4 transition-all">
+                    <div class="p-4 bg-slate-50 dark:bg-slate-900/50 rounded-xl border ${isCompleted ? 'border-slate-200 opacity-60' : 'border-slate-100 hover:border-primary-400'} flex flex-col md:flex-row md:items-center justify-between gap-4 transition-all">
                         <div class="space-y-1.5">
                             <div class="flex flex-wrap items-center gap-2">
                                 <span class="text-[10px] uppercase font-extrabold px-2 py-0.5 rounded ${pBadge}">${a.prioritas}</span>
@@ -2935,14 +2941,14 @@
                                 <span class="flex items-center gap-1"><i data-lucide="clock" class="w-3.5 h-3.5"></i> ${a.waktu} WIB</span>
                                 <span class="flex items-center gap-1"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i> ${a.lokasi}</span>
                             </div>
-                            <p class="text-xs text-slate-550 max-w-xl">${a.deskripsi}</p>
+                            <p class="text-xs text-slate-505 max-w-xl">${a.deskripsi}</p>
                         </div>
                         <div class="flex items-center gap-2 self-end md:self-center">
                             <button onclick="toggleAgendaStatus('${a.id}')" class="p-2 bg-emerald-50 text-emerald-600 hover:bg-emerald-100 dark:bg-emerald-955/20 dark:text-emerald-400 rounded-xl" title="Tandai Selesai">
                                 <i data-lucide="${isCompleted ? 'rotate-ccw' : 'check'}" class="w-4 h-4"></i>
                             </button>
                             <button onclick="openAgendaModal('${a.id}')" class="p-2 bg-blue-50 text-blue-600 hover:bg-blue-100 dark:bg-blue-955/20 dark:text-blue-400 rounded-xl" title="Edit"><i data-lucide="edit" class="w-4 h-4"></i></button>
-                            <button onclick="deleteAgendaData('${a.id}')" class="p-2 bg-red-50 text-red-650 hover:bg-red-105 dark:bg-red-955/20 dark:text-red-450 rounded-xl" title="Hapus"><i data-lucide="trash" class="w-4 h-4"></i></button>
+                            <button onclick="deleteAgendaData('${a.id}')" class="p-2 bg-red-600 hover:bg-red-750 text-white rounded-xl p-2 transition-colors"><i data-lucide="trash" class="w-4 h-4"></i></button>
                         </div>
                     </div>
                 `;
@@ -3199,7 +3205,7 @@
                         <td class="p-4 text-right">
                             <div class="flex items-center justify-end gap-1.5">
                                 <button onclick="openCatatanModal('${c.id}')" class="p-1.5 bg-blue-50 text-blue-600 hover:bg-blue-100 rounded-lg"><i data-lucide="edit" class="w-4 h-4"></i></button>
-                                <button onclick="deleteCatatanData('${c.id}')" class="p-1.5 bg-red-50 text-red-650 hover:bg-red-100 dark:bg-red-955/20 dark:text-red-455 rounded-lg"><i data-lucide="trash" class="w-4 h-4"></i></button>
+                                <button onclick="deleteCatatanData('${c.id}')" class="p-1.5 bg-red-600 text-white rounded-xl text-xs font-semibold"><i data-lucide="trash" class="w-4 h-4"></i></button>
                             </div>
                         </td>
                     </tr>
@@ -3465,31 +3471,21 @@
             let tableHTML = '';
 
             if (type === 'jurnal') {
-                const usersList = dbGet('guru_users') || [];
                 tableHTML = `
                     <table border="1" cellpadding="8" style="width:100%; border-collapse:collapse; font-size:11px; margin-top:20px;">
                         <tr style="background-color:#f1f5f9;">
                             <th>Tanggal</th><th>Guru / Kelas</th><th>Mata Pelajaran / Materi</th><th>Hadir</th><th>Absen</th><th>Kegiatan / Refleksi</th>
                         </tr>
-                        ${data.map(j => {
-                            const teacherObj = usersList.find(u => u.id === j.userId || u.name === j.namaGuru);
-                            let resolvedKelas = "Semua Kelas";
-                            if (teacherObj && teacherObj.kelas && teacherObj.kelas !== "undefined" && teacherObj.kelas !== "null") {
-                                resolvedKelas = teacherObj.kelas;
-                            } else if (j.kelas && !String(j.kelas).includes('T') && !String(j.kelas).includes('-')) {
-                                resolvedKelas = j.kelas;
-                            }
-                            return `
-                                <tr>
-                                    <td>${formatDateIndo(j.tanggal)}</td>
-                                    <td><b>${j.namaGuru}</b><br>${resolvedKelas}</td>
-                                    <td><b>${j.mapel}</b><br>${j.materi}</td>
-                                    <td>${j.hadir}</td>
-                                    <td>${j.absen}</td>
-                                    <td>${j.kegiatan}<br><i>Refleksi: ${j.refleksi}</i></td>
-                                </tr>
-                            `;
-                        }).join('')}
+                        ${data.map(j => `
+                            <tr>
+                                <td>${formatDateIndo(j.tanggal)}</td>
+                                <td><b>${j.namaGuru}</b><br>${j.kelas}</td>
+                                <td><b>${j.mapel}</b><br>${j.materi}</td>
+                                <td>${j.hadir}</td>
+                                <td>${j.absen}</td>
+                                <td>${j.kegiatan}<br><i>Refleksi: ${j.refleksi}</i></td>
+                            </tr>
+                        `).join('')}
                     </table>
                 `;
             } else if (type === 'agenda') {
@@ -3803,7 +3799,7 @@
             let html = '';
             notifications.forEach(n => {
                 html += `
-                    <div class="p-2 hover:bg-slate-50 dark:hover:bg-slate-700/50 rounded-lg border-b dark:border-slate-700 last:border-b-0">
+                    <div class="p-2 hover:bg-slate-55 dark:hover:bg-slate-700/50 rounded-lg border-b dark:border-slate-700 last:border-b-0">
                         <h5 class="font-bold text-xs text-slate-800 dark:text-white flex items-center gap-1">
                             <span class="w-1.5 h-1.5 rounded-full bg-red-500"></span>
                             ${n.title}
